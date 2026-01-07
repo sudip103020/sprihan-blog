@@ -15,7 +15,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
 
   return (
     <>
-      <div>
+      {/* <div>
         <nav className="p-4 bg-gray-200 d-flex gap-4">
           <Link to="/" className="text-blue-600 hover:underline">
             Home
@@ -29,7 +29,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
             Contact
           </Link>
         </nav>
-      </div>
+      </div> */}
       {children}
     </>
   );

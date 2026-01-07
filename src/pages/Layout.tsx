@@ -1,5 +1,6 @@
 import React, { type JSX } from "react";
 import { Link } from "react-router";
+import Header from "../Header";
 
 interface LayoutProps {
   children: JSX.Element;
@@ -8,6 +9,8 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <div>
+       
+
       {/* <nav className="p-4 bg-gray-200 d-flex gap-4">
         <Link to="/" className="text-blue-600 hover:underline">
           Home
@@ -22,7 +25,8 @@ export default function Layout({ children }: LayoutProps) {
         </Link>
       </nav> */}
       {children}
-      <div>Footer</div>
+       <Header />
+      
     </div>
   );
 }
