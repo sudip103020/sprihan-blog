@@ -17,7 +17,7 @@ export default function MainRoute() {
             </ProtectedRoute>
           }
         />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<ProtectedRoute><Contact /></ProtectedRoute>} />
       </Routes>
   );
 }
