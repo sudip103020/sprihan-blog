@@ -9,7 +9,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const correctEmail = "admin@gmail.com";
+  const correctEmail = "sprihanhaldar@gmail.com";
   const correctPassword = "123456";
 
   const handleSubmit = (e: React.FormEvent) => {

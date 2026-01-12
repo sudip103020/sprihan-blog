@@ -2,6 +2,7 @@ import React, { type JSX } from "react";
 import { Link } from "react-router";
 import Header from "../Header";
 
+
 interface LayoutProps {
   children: JSX.Element;
 }
