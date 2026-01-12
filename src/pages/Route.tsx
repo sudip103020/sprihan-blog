@@ -3,6 +3,9 @@ import ProtectedRoute from "../ProtectedRoute";
 import About from "./About";
 import Contact from "./Contact";
 import Login from "./Login";
+import Header from "../Header";
+import AddPostPage from "./AddPostPage";
+import ViewPostsPage from "./ViewPostsPage";
 
 export default function MainRoute() {
   return (
@@ -25,7 +28,38 @@ export default function MainRoute() {
               <Contact />
             </ProtectedRoute>
           }
+          
         />
+
+        <Route
+          path="/post"
+          element={
+            <ProtectedRoute>
+              <AddPostPage />
+            </ProtectedRoute>
+          }
+          
+        />
+
+        <Route
+          path="/view"
+          element={
+            <ProtectedRoute>
+              <ViewPostsPage />
+            </ProtectedRoute>
+          }
+          
+        />
+        <Route
+          path="/Header"
+          element={
+            <ProtectedRoute>
+              <Header />
+            </ProtectedRoute>
+          }
+          
+        />
+        
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
   );

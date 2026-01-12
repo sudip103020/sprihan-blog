@@ -25,7 +25,7 @@ export default function Layout({ children }: LayoutProps) {
         </Link>
       </nav> */}
       {children}
-       <Header />
+      
       
     </div>
   );
