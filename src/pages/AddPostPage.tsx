@@ -6,17 +6,32 @@ const AddPostPage = () => {
   const [image, setImage] = useState<File | null>(null);
   const [comment, setComment] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Backend পরে যুক্ত হবে
-    console.log({
-      date,
-      image,
-      comment,
-    });
+    const formData = new FormData();
+    formData.append("date", date);
+    formData.append("description", comment);
+    if (image) formData.append("image", image);
 
-    alert("ফর্ম সাবমিট হয়েছে (ডেমো)");
+    try {
+      const res = await fetch("http://localhost:9001/api/posts/save", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) {
+        throw new Error("API Error");
+      }
+
+      alert("পোস্ট যুক্ত হয়েছে ✅");
+      setDate("");
+      setComment("");
+      setImage(null);
+    } catch (err) {
+      console.error(err);
+      alert("পোস্ট যুক্ত করা যায়নি ❌");
+    }
   };
 
   return (
@@ -41,15 +56,9 @@ const AddPostPage = () => {
       </div>
 
       {/* Drawer / Offcanvas */}
-      <div
-        className="offcanvas offcanvas-end"
-        tabIndex={-1}
-        id="addPostDrawer"
-      >
+      <div className="offcanvas offcanvas-end" tabIndex={-1} id="addPostDrawer">
         <div className="offcanvas-header">
-          <h5 className="offcanvas-title fw-bold">
-            ➕ নতুন পোস্ট যুক্ত করুন
-          </h5>
+          <h5 className="offcanvas-title fw-bold">➕ নতুন পোস্ট যুক্ত করুন</h5>
           <button
             type="button"
             className="btn-close"
@@ -61,9 +70,7 @@ const AddPostPage = () => {
           <form onSubmit={handleSubmit}>
             {/* Date */}
             <div className="mb-3">
-              <label className="form-label fw-semibold">
-                তারিখ
-              </label>
+              <label className="form-label fw-semibold">তারিখ</label>
               <input
                 type="date"
                 className="form-control"
@@ -75,9 +82,7 @@ const AddPostPage = () => {
 
             {/* Image */}
             <div className="mb-3">
-              <label className="form-label fw-semibold">
-                ছবি
-              </label>
+              <label className="form-label fw-semibold">ছবি</label>
               <input
                 type="file"
                 className="form-control"
@@ -91,9 +96,7 @@ const AddPostPage = () => {
 
             {/* Comment */}
             <div className="mb-3">
-              <label className="form-label fw-semibold">
-                মন্তব্য
-              </label>
+              <label className="form-label fw-semibold">মন্তব্য</label>
               <textarea
                 className="form-control"
                 rows={4}
@@ -105,10 +108,7 @@ const AddPostPage = () => {
             </div>
 
             {/* Submit */}
-            <button
-              type="submit"
-              className="btn btn-primary w-100 mt-3"
-            >
+            <button type="submit" className="btn btn-primary w-100 mt-3">
               সাবমিট
             </button>
           </form>

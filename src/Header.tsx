@@ -60,6 +60,20 @@ const Header = () => {
                                 <li><Link className="dropdown-item" to="/category/typescript">TypeScript</Link></li>
                             </ul>
                         </li>
+                        <li className="nav-item dropdown">
+                            <a
+                                className="nav-link dropdown-toggle"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                            >
+                                Game
+                            </a>
+                            <ul className="dropdown-menu">
+                                <li><Link className="dropdown-item" to="/addgame">Add Game</Link></li>
+                                <li><Link className="dropdown-item" to="/viewgame">View Match</Link></li>
+                            </ul>
+                        </li>
                     </ul>
 
                     {/* Right side */}

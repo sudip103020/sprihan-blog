@@ -6,6 +6,8 @@ import Login from "./Login";
 import Header from "../Header";
 import AddPostPage from "./AddPostPage";
 import ViewPostsPage from "./ViewPostsPage";
+import AddGamePage from "./AddGamePage";
+import ViewGamesPage from "./ViewGamePage";
 
 export default function MainRoute() {
   return (
@@ -50,6 +52,28 @@ export default function MainRoute() {
           }
           
         />
+
+        <Route
+          path="/addgame"
+          element={
+            <ProtectedRoute>
+              <AddGamePage />
+            </ProtectedRoute>
+          }
+          
+        />
+
+         <Route
+          path="/viewgame"
+          element={
+            <ProtectedRoute>
+              <ViewGamesPage />
+            </ProtectedRoute>
+          }
+          
+        />
+
+    
         <Route
           path="/Header"
           element={
