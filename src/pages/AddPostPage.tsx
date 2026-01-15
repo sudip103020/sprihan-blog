@@ -52,7 +52,7 @@ const AddPostPage = () => {
 
       {/* Empty state */}
       <div className="text-center text-muted border rounded-4 p-5">
-        এখনো কোনো পোস্ট নেই
+        এই পেইজ থেকে প্রতিদিনের ইভেন্ট যুক্ত করতে পারবেন। ধন্যবাদ
       </div>
 
       {/* Drawer / Offcanvas */}

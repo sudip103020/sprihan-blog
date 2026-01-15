@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Event } from "./Event";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export interface Post {
@@ -9,7 +8,7 @@ export interface Post {
   description: string;
 }
 
-const ViewPostsPage = () => {
+const tictoe = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -54,19 +53,45 @@ const ViewPostsPage = () => {
   };
 
   return (
-    <div className="container my-5">
-      <h3 className="fw-bold text-primary mb-4">📝 All Posts</h3>
+   <div className="container my-5">
+  <h3 className="fw-bold text-primary mb-4">📝 All Posts</h3>
 
-      {loading && <div className="text-center">⏳ লোড হচ্ছে...</div>}
-      {error && <div className="alert alert-danger">{error}</div>}
+  <div className="row g-4">
+    {posts.map((post) => (
+      <div key={post.id} className="col-12">
+        <div className="card shadow-sm border-0 rounded-4 overflow-hidden">
+          <div className="row g-0">
+            
+            {/* LEFT: Text */}
+            <div className="col-md-4 p-4 d-flex flex-column justify-content-start">
+              <span className="badge bg-primary mb-3">
+                📅 {new Date(post.date).toLocaleDateString()}
+              </span>
+              <p className="text-muted mb-0">{post.description}</p>
+            </div>
 
-      <div className="row g-4">
-        {posts.map((post) => (
-          <Event key={post.id} post={post} onDelete={handleDelete} />
-        ))}
+            {/* RIGHT: Image */}
+            {post.imageUrl && (
+              <div className="col-md-8">
+                <img
+                  src={`http://localhost:9001/uploads/${post.imageUrl}`}
+                  alt="post"
+                  className="img-fluid w-100 h-100"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+            )}
+
+          </div>
+        </div>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
+
   );
 };
 
-export default ViewPostsPage;
+export default tictoe;

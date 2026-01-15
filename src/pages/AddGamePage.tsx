@@ -63,7 +63,7 @@ const AddGamePage = () => {
 
       {/* Empty state */}
       <div className="text-center text-muted border rounded-4 p-5">
-        এখনো কোনো গেম যুক্ত হয়নি
+         এই পেইজ থেকে প্রতিদিনের গেইম যুক্ত করতে পারবেন। ধন্যবাদ 
       </div>
 
       {/* Drawer */}

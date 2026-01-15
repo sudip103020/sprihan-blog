@@ -30,14 +30,7 @@ const PostsView = () => {
           {posts.map((post) => (
             <div key={post.id} className="col-md-4 mb-4">
               <div className="card h-100">
-                {post.image && (
-                  <img
-                    src={`http://localhost:9001/uploads/${post.image}`}
-                    className="card-img-top"
-                    alt="post"
-                    style={{ objectFit: "cover", height: "200px" }}
-                  />
-                )}
+              
                 <div className="card-body">
                   <h5 className="card-title">{new Date(post.date).toLocaleDateString()}</h5>
                   <p className="card-text">{post.description}</p>
