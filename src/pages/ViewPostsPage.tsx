@@ -54,7 +54,7 @@ const ViewPostsPage = () => {
   };
 
   return (
-    <div className="container my-5">
+    <div className="container">
       <h3 className="fw-bold text-primary mb-4">📝 All Posts</h3>
 
       {loading && <div className="text-center">⏳ লোড হচ্ছে...</div>}

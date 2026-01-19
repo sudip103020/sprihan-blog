@@ -18,7 +18,7 @@ const About = () => {
   };
 
   return (
-    <div className="admin-content">
+    <div>
       <div className="card shadow-lg p-4 text-center rounded-4" style={{ maxWidth: 1000, width: "100%" }}>
         <h2 className="text-danger-emphasis">{user.name}</h2>
         <h3 className="text-success-emphasis mb-4">

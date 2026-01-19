@@ -25,9 +25,9 @@ export const Event = ({ post, onDelete }: EventProps) => {
               style={{
                 width: "100%",
                 height: "270px",
-                objectFit: "cover",
+                objectFit: "fill",
                 display: "block",
-                position: "static", // 🔥 VERY IMPORTANT
+                // position: "static", // 🔥 VERY IMPORTANT
               }}
             />
           </div>

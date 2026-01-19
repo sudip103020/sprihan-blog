@@ -1,7 +1,7 @@
 import type { JSX } from "react";
-import { Link, Navigate } from "react-router-dom";
-import Header from "./Header";
+import { Navigate } from "react-router-dom";
 import Footer from "./Footer";
+import Header from "./Header";
 
 interface ProtectedRouteProps {
   children: JSX.Element;
@@ -34,7 +34,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
           </Link>
         </nav>
       </div> */}
-      <main className="admin-content">
+      <main className="d-flex justify-content-center align-items-center w-100 my-5 pt-5">
     {children}        {/* About page will fill this */}
   </main>
     </>
