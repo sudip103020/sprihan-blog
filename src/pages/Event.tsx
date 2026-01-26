@@ -3,6 +3,7 @@ import type { Post } from "./ViewPostsPage";
 interface EventProps {
   post: Post;
   onDelete: (id: string) => void;
+ 
 }
 
 export const Event = ({ post, onDelete }: EventProps) => {

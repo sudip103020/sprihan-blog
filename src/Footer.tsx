@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { FaFacebook, FaTwitter, FaGithub, FaYoutube } from "react-icons/fa";
-import { BsLinkedin } from "react-icons/bs";
+
+import { FaFacebook, FaGithub, FaYoutube } from "react-icons/fa";
+
 const Footer = () => {
     return (
         <footer className="bg-dark text-light mt-1 pt-0 admin-footer">
