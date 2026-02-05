@@ -10,7 +10,7 @@ export interface Post {
 
 const tictoe = () => {
   const [posts, setPosts] = useState<Post[]>([]);
- 
+
   const [editingPost, setEditingPost] = useState<Post | null>(null);
   const [editDescription, setEditDescription] = useState("");
   const [editImage, setEditImage] = useState<File | null>(null);
@@ -27,13 +27,8 @@ const tictoe = () => {
             new Date(b.date).getTime() - new Date(a.date).getTime(),
         );
         setPosts(sorted);
-        // setPosts(data);
-        setLoading(false);
       })
-      .catch(() => {
-        setError("পোস্ট লোড করা যায়নি ❌");
-        setLoading(false);
-      });
+      .catch(() => console.log("error"));
   }, []);
 
   const handleDelete = async (id: string) => {
@@ -55,39 +50,38 @@ const tictoe = () => {
   };
 
   const handleUpdate = async () => {
-  if (!editingPost) return;
+    if (!editingPost) return;
 
-  const formData = new FormData();
-  formData.append("description", editDescription);
+    const formData = new FormData();
+    formData.append("description", editDescription);
 
-  if (editImage) {
-    formData.append("image", editImage);
-  }
+    if (editImage) {
+      formData.append("image", editImage);
+    }
 
-  try {
-    const res = await fetch(
-      `http://localhost:9001/api/posts/update/${editingPost.id}`,
-      {
-        method: "PUT",
-        body: formData,
-      }
-    );
+    try {
+      const res = await fetch(
+        `http://localhost:9001/api/posts/update/${editingPost.id}`,
+        {
+          method: "PUT",
+          body: formData,
+        },
+      );
 
-    if (!res.ok) throw new Error();
+      if (!res.ok) throw new Error();
 
-    const updatedPost = await res.json();
+      const updatedPost = await res.json();
 
-    setPosts((prev) =>
-      prev.map((p) => (p.id === updatedPost.id ? updatedPost : p))
-    );
+      setPosts((prev) =>
+        prev.map((p) => (p.id === updatedPost.id ? updatedPost : p)),
+      );
 
-    setEditingPost(null);
-    alert("পোস্ট আপডেট হয়েছে ✅");
-  } catch {
-    alert("আপডেট করা যায়নি ❌");
-  }
-};
-
+      setEditingPost(null);
+      alert("পোস্ট আপডেট হয়েছে ✅");
+    } catch {
+      alert("আপডেট করা যায়নি ❌");
+    }
+  };
 
   return (
     <div className="container my-5">
@@ -145,60 +139,59 @@ const tictoe = () => {
       </div>
 
       {editingPost && (
-  <div className="modal fade show d-block" style={{ background: "rgba(0,0,0,.5)" }}>
-    <div className="modal-dialog modal-lg">
-      <div className="modal-content rounded-4">
+        <div
+          className="modal fade show d-block"
+          style={{ background: "rgba(0,0,0,.5)" }}
+        >
+          <div className="modal-dialog modal-lg">
+            <div className="modal-content rounded-4">
+              <div className="modal-header">
+                <h5 className="modal-title">✏️ Edit Post</h5>
+                <button
+                  className="btn-close"
+                  onClick={() => setEditingPost(null)}
+                />
+              </div>
 
-        <div className="modal-header">
-          <h5 className="modal-title">✏️ Edit Post</h5>
-          <button
-            className="btn-close"
-            onClick={() => setEditingPost(null)}
-          />
+              <div className="modal-body">
+                <textarea
+                  className="form-control mb-3"
+                  rows={4}
+                  value={editDescription}
+                  onChange={(e) => setEditDescription(e.target.value)}
+                />
+
+                <input
+                  type="file"
+                  className="form-control"
+                  accept="image/*"
+                  onChange={(e) => setEditImage(e.target.files?.[0] || null)}
+                />
+
+                {editingPost.imageUrl && (
+                  <img
+                    src={`http://localhost:9001/uploads/${editingPost.imageUrl}`}
+                    className="img-fluid mt-3 rounded"
+                  />
+                )}
+              </div>
+
+              <div className="modal-footer">
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => setEditingPost(null)}
+                >
+                  Cancel
+                </button>
+
+                <button className="btn btn-primary" onClick={handleUpdate}>
+                  Save Changes
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div className="modal-body">
-          <textarea
-            className="form-control mb-3"
-            rows={4}
-            value={editDescription}
-            onChange={(e) => setEditDescription(e.target.value)}
-          />
-
-          <input
-            type="file"
-            className="form-control"
-            accept="image/*"
-            onChange={(e) => setEditImage(e.target.files?.[0] || null)}
-          />
-
-          {editingPost.imageUrl && (
-            <img
-              src={`http://localhost:9001/uploads/${editingPost.imageUrl}`}
-              className="img-fluid mt-3 rounded"
-            />
-          )}
-        </div>
-
-        <div className="modal-footer">
-          <button
-            className="btn btn-secondary"
-            onClick={() => setEditingPost(null)}
-          >
-            Cancel
-          </button>
-
-          <button className="btn btn-primary" onClick={handleUpdate}>
-            Save Changes
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-)}
-
-      
+      )}
     </div>
   );
 };
