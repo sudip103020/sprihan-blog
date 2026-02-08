@@ -30,28 +30,28 @@ const Header = () => {
 
         {/* Menu */}
         <div className="collapse navbar-collapse" id="blogNavbar">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav me-auto mb-1 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <Link className="nav-link navbar-brand fw-bold" to="/about">
                 About
               </Link>
             </li>
 
             <li className="nav-item">
-                  <Link className="nav-link" to="/tictoe">
+                  <Link className="nav-link navbar-brand fw-bold" to="/tictoe">
                     Tic Toe Game
                   </Link>
                 </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">
+              <Link className="nav-link navbar-brand fw-bold" to="/contact">
                 Contact
               </Link>
             </li>
             {/* Dropdown */}
             <li className="nav-item dropdown">
               <a
-                className="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle navbar-brand fw-bold"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -74,7 +74,7 @@ const Header = () => {
             </li>
             <li className="nav-item dropdown">
               <a
-                className="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle navbar-brand fw-bold"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"

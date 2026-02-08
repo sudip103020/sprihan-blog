@@ -1,0 +1,58 @@
+export const people = [
+  {
+    id: 0,
+    Relation: "Father",
+    name: "Sudip Kumar Halder",
+    Date_of_birth: "18-02-1993",
+    profession: "Govt Employee",
+    imageId: "baba.jpeg",
+  },
+  {
+    id: 1,
+    Relation: "Mother",
+    name: "Puja Dey",
+    Date_of_birth: "07-12-1999",
+    profession: "Banker",
+    imageId: "ma.jpeg",
+  },
+  {
+    id: 2,
+    Relation: "Grandmother(paternal)",
+    name: "Tara Rani ",
+    Date_of_birth: "07-12-1974",
+    profession: "Housewife",
+     imageId: "dada.jpeg",
+  },
+  {
+    id: 3,
+    Relation: "Grandfather(paternal)",
+    name: "Sudangsu Kumar Halder",
+    Date_of_birth: "01-12-1970",
+    profession: "Farmer",
+       imageId: "dadi.jpeg",
+  },
+  {
+    id: 4,
+    Relation: "Grandfather(maternal)",
+    name: "Tapas Kumar Dey",
+    Date_of_birth: "01-12-1970",
+    profession: "Former Employee",
+      imageId: "nana.jpeg",
+  },
+  {
+    id: 5,
+    Relation: "Grandmother(maternal)",
+    name: "Topy Rani Sen",
+    Date_of_birth: "07-12-1974",
+    profession: "Teacher",
+      imageId: "nani.jpeg",
+  },
+  {
+    id: 6,
+    Relation: "khala",
+    name: "tori",
+    Date_of_birth: "07-12-2010",
+    profession: "Student",
+    imageId: "khala.jpeg",
+  }
+];
