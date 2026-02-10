@@ -14,9 +14,9 @@ const Header = () => {
     <nav className=" navbar navbar-expand-lg navbar-dark bg-dark shadow admin-header">
       <div className="container">
         {/* Logo */}
-        <Link className="navbar-brand fw-bold" to="/about">
+        <view className="navbar-brand fw-bold " >
           ✍️ SprihanBlog
-        </Link>
+        </view>
 
         {/* Mobile toggle */}
         <button
@@ -38,10 +38,16 @@ const Header = () => {
             </li>
 
             <li className="nav-item">
-                  <Link className="nav-link navbar-brand fw-bold" to="/tictoe">
-                    Tic Toe Game
-                  </Link>
-                </li>
+              <Link className="nav-link navbar-brand fw-bold " to="/memoryalbum">
+                Memory
+              </Link>
+            </li>
+
+            {/* <li className="nav-item">
+              <Link className="nav-link navbar-brand fw-bold" to="/tictoe">
+                Tic Toe Game
+              </Link>
+            </li> */}
 
             <li className="nav-item">
               <Link className="nav-link navbar-brand fw-bold" to="/contact">
@@ -69,7 +75,6 @@ const Header = () => {
                     View Event
                   </Link>
                 </li>
-                
               </ul>
             </li>
             <li className="nav-item dropdown">
@@ -103,8 +108,8 @@ const Header = () => {
               src={user.imageUr}
               alt="profile"
               className="rounded-circle border"
-              width="40"
-              height="40"
+              width="45"
+             
             />
 
             {/* Logout */}

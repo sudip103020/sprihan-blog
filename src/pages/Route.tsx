@@ -9,6 +9,7 @@ import ViewPostsPage from "./ViewPostsPage";
 import AddGamePage from "./AddGamePage";
 import ViewGamesPage from "./ViewGamePage";
 import TicToeGame from "./TicToeGame";
+import MemoryAlbum from "./MemoryAlbum";
 
 export default function MainRoute() {
   return (
@@ -75,7 +76,14 @@ export default function MainRoute() {
           </ProtectedRoute>
         }
       />
-
+      <Route
+        path="/memoryalbum"
+        element={
+          <ProtectedRoute>
+            <MemoryAlbum />
+          </ProtectedRoute>
+        }
+      />
       <Route
         path="/Header"
         element={

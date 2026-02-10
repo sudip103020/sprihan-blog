@@ -71,9 +71,9 @@ const About = () => {
           minWidth: 280,
         }}
       >
-        <div className="card shadow-lg p-4 rounded-4 text-center">
+        <div className="card shadow-lg p-4 rounded-4 text-left">
           <img
-            className="rounded-circle border mb-3"
+            className="rounded-circle border mb-3 align-self-center"
             src={user.imageUr2}
             alt={"Photo of " + user.title}
             style={{

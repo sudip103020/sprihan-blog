@@ -21,7 +21,7 @@ export const people = [
     name: "Tara Rani ",
     Date_of_birth: "07-12-1974",
     profession: "Housewife",
-     imageId: "dada.jpeg",
+     imageId: "dadi.jpeg",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const people = [
     name: "Sudangsu Kumar Halder",
     Date_of_birth: "01-12-1970",
     profession: "Farmer",
-       imageId: "dadi.jpeg",
+       imageId: "dada.jpeg",
   },
   {
     id: 4,
