@@ -10,7 +10,7 @@ interface Person {
 }
 
 const user = {
-  title: "👨‍👩‍👧‍👦 Sprihan Haldar’s All Memories",
+  title: "👨‍👩‍👧‍👦 Sprihan Halder’s All Memories",
   name: "Sprihan Haldar",
   DOB: "30-10-2025",
   place: "Dhaka, Bangladesh",
@@ -35,20 +35,16 @@ const MemoryAlbum = () => {
   };
 
   const prevImage = () => {
-    setActiveIndex((prev) =>
-      prev === 0 ? activeImages.length - 1 : prev - 1
-    );
+    setActiveIndex((prev) => (prev === 0 ? activeImages.length - 1 : prev - 1));
   };
 
   // TypeScript-safe scroll refs
   const scrollRefs = useRef<(HTMLDivElement | null)[]>(
-    Array.from({ length: people.length }, () => null)
+    Array.from({ length: people.length }, () => null),
   );
 
- 
-
   const listitem = people.map((person: Person, idx) => (
-    <div key={person.id} className="col-12 col-md-6 col-lg-4">
+    <div key={person.id} className="col-12 col-md-6 col-lg-4 profile-sticky">
       <div className="card shadow-sm p-3 rounded-4 h-auto">
         <div>
           {/* DATE & DESCRIPTION */}
@@ -61,10 +57,9 @@ const MemoryAlbum = () => {
 
           {/* 📸 ALBUM GRID */}
           <div
-           ref={(el) => {
-  (scrollRefs.current as HTMLDivElement[])[idx] = el!;
-}}
-
+            ref={(el) => {
+              (scrollRefs.current as HTMLDivElement[])[idx] = el!;
+            }}
             className="d-flex gap-2 mt-2"
             style={{
               overflowX: "auto",
@@ -78,8 +73,9 @@ const MemoryAlbum = () => {
                 alt="memory"
                 className="rounded-3"
                 style={{
-                  height: 80,
-                  width: 80,
+                  height: window.innerWidth < 500 ? 60 : 80,
+                  width: window.innerWidth < 500 ? 60 : 80,
+
                   objectFit: "cover",
                   cursor: "pointer",
                   flexShrink: 0,
@@ -87,8 +83,6 @@ const MemoryAlbum = () => {
                 onClick={() => openAlbum(person.imageId, index)}
               />
             ))}
-
-           
           </div>
         </div>
       </div>
@@ -96,21 +90,25 @@ const MemoryAlbum = () => {
   ));
 
   return (
-    <div className="d-flex justify-content-center" style={{ minHeight: "100vh" }}>
+    <div
+      className="d-flex justify-content-center"
+      style={{ minHeight: "100vh" }}
+    >
       <div
         className="d-flex flex-column gap-4"
         style={{
           maxWidth: 1200,
           width: "100%",
           padding: "20px",
-          height: "100vh",
+          minHeight: "100vh",
         }}
       >
         {/* LEFT PROFILE */}
         <div
           style={{
-            position: "sticky",
+            position: window.innerWidth < 768 ? "static" : "sticky",
             top: 40,
+
             height: "fit-content",
           }}
         >
@@ -142,7 +140,7 @@ const MemoryAlbum = () => {
         <div
           style={{
             overflowY: "auto",
-            maxHeight: "calc(100vh - 160px)", 
+            maxHeight: "calc(100vh - 160px)",
             paddingRight: 5,
           }}
         >

@@ -75,6 +75,11 @@ const Header = () => {
                     View Event
                   </Link>
                 </li>
+                <li>
+                  <Link className="dropdown-item" to="/tictoe">
+                    Edit Event
+                  </Link>
+                </li>
               </ul>
             </li>
             <li className="nav-item dropdown">

@@ -55,7 +55,7 @@ const ViewPostsPage = () => {
 
   return (
     <div className="container">
-      <h3 className="fw-bold text-primary mb-4">📝 All Posts</h3>
+      <h3 className="fw-bold text-primary mb-4">📝 All Posts you have in Database</h3>
 
       {loading && <div className="text-center">⏳ লোড হচ্ছে...</div>}
       {error && <div className="alert alert-danger">{error}</div>}

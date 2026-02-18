@@ -9,11 +9,11 @@ export interface Post {
 }
 
 const tictoe = () => {
-  
   const [posts, setPosts] = useState<Post[]>([]);
 
   const [editingPost, setEditingPost] = useState<Post | null>(null);
   const [editDescription, setEditDescription] = useState("");
+  const [editDate, setEditDate] = useState("");
   const [editImage, setEditImage] = useState<File | null>(null);
 
   useEffect(() => {
@@ -54,6 +54,7 @@ const tictoe = () => {
     if (!editingPost) return;
 
     const formData = new FormData();
+    formData.append("date", editDate);
     formData.append("description", editDescription);
 
     if (editImage) {
@@ -119,6 +120,7 @@ const tictoe = () => {
                     className="btn btn-sm btn-outline-primary me-2"
                     onClick={() => {
                       setEditingPost(post);
+                   setEditDate(post.date.split("T")[0]);
                       setEditDescription(post.description);
                       setEditImage(null);
                     }}
@@ -155,6 +157,17 @@ const tictoe = () => {
               </div>
 
               <div className="modal-body">
+                <div className="mb-3">
+                  <label className="form-label fw-semibold">তারিখ</label>
+                  <input
+                    type="date"
+                    className="form-control"
+                    value={editDate}
+                    onChange={(e) => setEditDate(e.target.value)}
+                    required
+                  />
+                </div>
+
                 <textarea
                   className="form-control mb-3"
                   rows={4}
