@@ -15,24 +15,24 @@ const ViewPostsPage = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:9001/api/posts/all")
-      .then((res) => {
+    const fetchPosts = async () => {
+      try {
+        const res = await fetch("http://localhost:9001/api/posts/all");
         if (!res.ok) throw new Error("Failed to fetch posts");
-        return res.json();
-      })
-      .then((data) => {
+
+        const data: Post[] = await res.json();
         const sorted = data.sort(
-          (a: Post, b: Post) =>
-            new Date(b.date).getTime() - new Date(a.date).getTime()
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
         );
         setPosts(sorted);
-        // setPosts(data);
-        setLoading(false);
-      })
-      .catch(() => {
+      } catch {
         setError("পোস্ট লোড করা যায়নি ❌");
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchPosts();
   }, []);
 
   const handleDelete = async (id: string) => {
@@ -53,16 +53,41 @@ const ViewPostsPage = () => {
     }
   };
 
+  const handleUpdate = (updatedPost: Post) => {
+    // পুরানো পোস্ট লিস্টে আপডেটেড পোস্ট replace করা
+    setPosts((prev) =>
+      prev.map((p) => (p.id === updatedPost.id ? updatedPost : p))
+    );
+  };
+
   return (
     <div className="container">
-      <h3 className="fw-bold text-primary mb-4">📝 All Posts you have in Database</h3>
+      <h3 className="fw-bold text-primary mb-4">📝 All Posts in Database</h3>
 
-      {loading && <div className="text-center">⏳ লোড হচ্ছে...</div>}
+      {loading && (
+        <div className="text-center my-5">
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">লোড হচ্ছে...</span>
+          </div>
+        </div>
+      )}
+
       {error && <div className="alert alert-danger">{error}</div>}
+
+      {!loading && posts.length === 0 && (
+        <div className="alert alert-info text-center">
+          কোনো পোস্ট পাওয়া যায়নি।
+        </div>
+      )}
 
       <div className="row g-4">
         {posts.map((post) => (
-          <Event key={post.id} post={post} onDelete={handleDelete} />
+          <Event
+            key={post.id}
+            post={post}
+            onDelete={handleDelete}
+            onUpdate={handleUpdate} // এখানে আপডেট ফাংশন পাঠানো
+          />
         ))}
       </div>
     </div>

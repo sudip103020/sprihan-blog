@@ -1,46 +1,37 @@
 import type { Post } from "./ViewPostsPage";
-import {useState } from "react";
+import { useState } from "react";
 
 interface EventProps {
   post: Post;
   onDelete: (id: string) => void;
+  onUpdate: (updatedPost: Post) => void; // parent কে আপডেট জানানোর callback
 }
 
-export const Event = ({ post, onDelete }: EventProps) => {
+export const Event = ({ post, onDelete, onUpdate }: EventProps) => {
+  const [editingPost, setEditingPost] = useState<Post | null>(null);
+  const [editDate, setEditDate] = useState("");
+  const [editDescription, setEditDescription] = useState("");
+  const [editImage, setEditImage] = useState<File | null>(null);
 
-  const [posts, setPosts] = useState<Post[]>([]);
-    const [editingPost, setEditingPost] = useState<Post | null>(null);
-    const [editDate, setEditDate] = useState("");
-    const [editDescription, setEditDescription] = useState("");
-    const [editImage, setEditImage] = useState<File | null>(null);
-
-     const handleUpdate = async () => {
+  const handleUpdate = async () => {
     if (!editingPost) return;
 
     const formData = new FormData();
     formData.append("date", editDate);
     formData.append("description", editDescription);
-
-    if (editImage) {
-      formData.append("image", editImage);
-    }
+    if (editImage) formData.append("image", editImage);
 
     try {
       const res = await fetch(
         `http://localhost:9001/api/posts/update/${editingPost.id}`,
-        {
-          method: "PUT",
-          body: formData,
-        },
+        { method: "PUT", body: formData }
       );
 
       if (!res.ok) throw new Error();
 
-      const updatedPost = await res.json();
+      const updatedPost: Post = await res.json();
 
-      setPosts((prev) =>
-        prev.map((p) => (p.id === updatedPost.id ? updatedPost : p)),
-      );
+      onUpdate(updatedPost); // parent কে জানাও আপডেট হয়েছে
 
       setEditingPost(null);
       alert("পোস্ট আপডেট হয়েছে ✅");
@@ -48,6 +39,7 @@ export const Event = ({ post, onDelete }: EventProps) => {
       alert("আপডেট করা যায়নি ❌");
     }
   };
+
   return (
     <div className="col-12 col-md-6 col-lg-4">
       <div className="card shadow-sm p-3 rounded-4 h-auto">
@@ -63,10 +55,7 @@ export const Event = ({ post, onDelete }: EventProps) => {
         {post.imageUrl && (
           <div
             className="d-flex gap-2 mt-2"
-            style={{
-              overflowX: "auto",
-              whiteSpace: "nowrap",
-            }}
+            style={{ overflowX: "auto", whiteSpace: "nowrap" }}
           >
             <img
               src={`http://localhost:9001/uploads/${post.imageUrl}`}
@@ -82,35 +71,38 @@ export const Event = ({ post, onDelete }: EventProps) => {
               onClick={() =>
                 window.open(
                   `http://localhost:9001/uploads/${post.imageUrl}`,
-                  "_blank",
+                  "_blank"
                 )
               }
             />
           </div>
         )}
 
+        {/* ACTION BUTTONS */}
         <div className="mt-3">
-                  <button
-                    className="btn btn-sm btn-outline-primary me-2"
-                    onClick={() => {
-                      setEditingPost(post);
-                      setEditDate(post.date.split("T")[0]);
-                      setEditDescription(post.description);
-                      setEditImage(null);
-                    }}
-                  >
-                    ✏️ Edit
-                  </button>
+          <button
+            className="btn btn-sm btn-outline-primary me-2"
+            onClick={() => {
+              setEditingPost(post);
+              setEditDate(post.date.split("T")[0]);
+              setEditDescription(post.description);
+              setEditImage(null);
+            }}
+          >
+            ✏️ Edit
+          </button>
 
-                  <button
-                    className="btn btn-sm btn-outline-danger"
-                    onClick={() => onDelete(post.id)}
-                  >
-                    🗑 Delete
-                  </button>
-                </div>
+          <button
+            className="btn btn-sm btn-outline-danger"
+            onClick={() => onDelete(post.id)}
+          >
+            🗑 Delete
+          </button>
+        </div>
       </div>
-       {editingPost && (
+
+      {/* EDIT MODAL */}
+      {editingPost && (
         <div
           className="modal fade show d-block"
           style={{ background: "rgba(0,0,0,.5)" }}
@@ -126,7 +118,7 @@ export const Event = ({ post, onDelete }: EventProps) => {
               </div>
 
               <div className="modal-body">
-                  <div className="mb-3">
+                <div className="mb-3">
                   <label className="form-label fw-semibold">তারিখ</label>
                   <input
                     type="date"
@@ -136,6 +128,7 @@ export const Event = ({ post, onDelete }: EventProps) => {
                     required
                   />
                 </div>
+
                 <textarea
                   className="form-control mb-3"
                   rows={4}
