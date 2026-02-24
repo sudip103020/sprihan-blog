@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { people } from "./memorylist";
 
+
 interface Person {
   id: number;
   Date_of_memory: string;
@@ -23,12 +24,37 @@ const MemoryAlbum = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [activeImages, setActiveImages] = useState<string[]>([]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [search, setSearch] = useState<string>("");
 
   const openAlbum = (images: string[], index: number) => {
     setActiveImages(images);
     setActiveIndex(index);
     setShowModal(true);
   };
+
+   const filteredBooks = people.filter(
+    (b) =>
+      b.Date_of_memory.toLowerCase().includes(search.toLowerCase()) ||
+      b.Description.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const highlightText = (text: string) => {
+  if (!search) return text;
+
+  const regex = new RegExp(`(${search})`, "gi");
+  const parts = text.split(regex);
+
+  return parts.map((part, index) =>
+    part.toLowerCase() === search.toLowerCase() ? (
+      <span key={index} style={{ backgroundColor: "yellow" }}>
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  );
+};
+
 
   const nextImage = () => {
     setActiveIndex((prev) => (prev + 1) % activeImages.length);
@@ -43,16 +69,21 @@ const MemoryAlbum = () => {
     Array.from({ length: people.length }, () => null),
   );
 
-  const listitem = people.map((person: Person, idx) => (
-    <div key={person.id} className="col-12 col-md-6 col-lg-4 profile-sticky">
+  const listitem = filteredBooks.map((person: Person, idx) => (
+  <div key={person.id} className="col-12 col-md-6 col-lg-4 profile-sticky">
+
       <div className="card shadow-sm p-3 rounded-4 h-auto">
         <div>
           {/* DATE & DESCRIPTION */}
           <div className="card shadow-sm p-3 rounded-4 bg-primary-subtle">
-            <h6 className="text-danger-emphasis mb-1 text-center">
-              {person.Date_of_memory}
-            </h6>
-            <p className="mb-1 text-warning-emphasis">{person.Description}</p>
+         <h6 className="text-danger-emphasis text-center">
+  {highlightText(person.Date_of_memory)}
+</h6>
+
+<p className="text-warning-emphasis">
+  {highlightText(person.Description)}
+</p>
+
           </div>
 
           {/* 📸 ALBUM GRID */}
@@ -136,10 +167,18 @@ const MemoryAlbum = () => {
           </div>
         </div>
 
+        <input
+        placeholder="Search By Date or Description..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+
+
         {/* RIGHT CONTENT */}
         <div
           style={{
             overflowY: "auto",
+          
             maxHeight: "calc(100vh - 160px)",
             paddingRight: 5,
           }}

@@ -23,7 +23,7 @@ export const Event = ({ post, onDelete, onUpdate }: EventProps) => {
 
     try {
       const res = await fetch(
-        `http://localhost:9001/api/posts/update/${editingPost.id}`,
+        `http://localhost:8080/api/posts/update/${editingPost.id}`,
         { method: "PUT", body: formData }
       );
 
@@ -58,7 +58,7 @@ export const Event = ({ post, onDelete, onUpdate }: EventProps) => {
             style={{ overflowX: "auto", whiteSpace: "nowrap" }}
           >
             <img
-              src={`http://localhost:9001/uploads/${post.imageUrl}`}
+              src={`http://localhost:8080/uploads/${post.imageUrl}`}
               alt="post"
               className="rounded-3"
               style={{
@@ -70,7 +70,7 @@ export const Event = ({ post, onDelete, onUpdate }: EventProps) => {
               }}
               onClick={() =>
                 window.open(
-                  `http://localhost:9001/uploads/${post.imageUrl}`,
+                  `http://localhost:8080/uploads/${post.imageUrl}`,
                   "_blank"
                 )
               }
@@ -145,7 +145,7 @@ export const Event = ({ post, onDelete, onUpdate }: EventProps) => {
 
                 {editingPost.imageUrl && (
                   <img
-                    src={`http://localhost:9001/uploads/${editingPost.imageUrl}`}
+                    src={`http://localhost:8080/uploads/${editingPost.imageUrl}`}
                     className="img-fluid mt-3 rounded"
                   />
                 )}

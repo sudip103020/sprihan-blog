@@ -17,7 +17,7 @@ const ViewPostsPage = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch("http://localhost:9001/api/posts/all");
+        const res = await fetch("http://localhost:8080/api/posts/all");
         if (!res.ok) throw new Error("Failed to fetch posts");
 
         const data: Post[] = await res.json();
@@ -40,7 +40,7 @@ const ViewPostsPage = () => {
       return;
 
     try {
-      const res = await fetch(`http://localhost:9001/api/posts/delete/${id}`, {
+      const res = await fetch(`http://localhost:8080/api/posts/delete/${id}`, {
         method: "DELETE",
       });
 
@@ -62,7 +62,7 @@ const ViewPostsPage = () => {
 
   return (
     <div className="container">
-      <h3 className="fw-bold text-primary mb-4">📝 All Posts in Database</h3>
+      <h3 className="fw-bold text-primary mb-4">📝 All Posts from Database</h3>
 
       {loading && (
         <div className="text-center my-5">

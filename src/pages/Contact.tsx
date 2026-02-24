@@ -1,45 +1,68 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-interface Post {
-  id: string;
-  date: string;
-  description: string;
-  image: string;
-}
+
 
 const PostsView = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [books, setBooks] = useState([
+    { id: 1, title: "React Basics", author: "John Doe" },
+    { id: 2, title: "JavaScript Guide", author: "Jane Smith" },
+      { id: 3, title: "TypeScript note", author: "Bob Johnson" },
+  ]);
 
-  useEffect(() => {
-    fetch("http://localhost:9001/api/posts/all")
-      .then((res) => res.json())
-      .then((data) => setPosts(data))
-      .catch((err) => console.error(err));
-  }, []);
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [search, setSearch] = useState("");
+
+  const addBook = () => {
+    if (!title.trim() || !author.trim()) return;
+    setBooks([...books, { id: Date.now(), title, author }]);
+    setTitle("");
+    setAuthor("");
+  };
+
+  // const deleteBook = (id) => {
+  //   setBooks(books.filter((b) => b.id !== id));
+  // };
+
+  const filteredBooks = books.filter(
+    (b) =>
+      b.title.toLowerCase().includes(search.toLowerCase()) ||
+      b.author.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
-    <div className="container my-5">
-      <h3 className="fw-bold text-primary mb-4">📝 All Posts</h3>
+   <div style={{ padding: 20 }}>
+      <h2>📚 e-Library Mini System</h2>
 
-      {posts.length === 0 ? (
-        <div className="text-center text-muted border rounded-4 p-5">
-          এখনো কোনো পোস্ট নেই
-        </div>
-      ) : (
-        <div className="row">
-          {posts.map((post) => (
-            <div key={post.id} className="col-md-4 mb-4">
-              <div className="card h-100">
-              
-                <div className="card-body">
-                  <h5 className="card-title">{new Date(post.date).toLocaleDateString()}</h5>
-                  <p className="card-text">{post.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+      <input
+        placeholder="Book title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <input
+        placeholder="Author"
+        value={author}
+        onChange={(e) => setAuthor(e.target.value)}
+      />
+      <button onClick={addBook}>Add Book</button>
+
+      <br /><br />
+
+      <input
+        placeholder="Search..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+
+      <ul>
+        {filteredBooks.map((book) => (
+          <motion.li key={book.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            {book.title} — {book.author}
+            {/* <button onClick={() => deleteBook(book.id)}>❌</button> */}
+          </motion.li>
+        ))}
+      </ul>
     </div>
   );
 };

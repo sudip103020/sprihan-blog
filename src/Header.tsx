@@ -11,12 +11,13 @@ const Header = () => {
   };
 
   return (
-    <nav className=" navbar navbar-expand-lg navbar-dark bg-dark shadow admin-header">
-      <div className="container">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
+      <div className="container-fluid px-3">
+
         {/* Logo */}
-        <view className="navbar-brand fw-bold " >
+        <Link className="navbar-brand fw-bold" to="/">
           ✍️ SprihanBlog
-        </view>
+        </Link>
 
         {/* Mobile toggle */}
         <button
@@ -30,34 +31,30 @@ const Header = () => {
 
         {/* Menu */}
         <div className="collapse navbar-collapse" id="blogNavbar">
-          <ul className="navbar-nav me-auto mb-1 mb-lg-0">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+
             <li className="nav-item">
-              <Link className="nav-link navbar-brand fw-bold" to="/about">
+              <Link className="nav-link fw-semibold" to="/about">
                 About
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link navbar-brand fw-bold " to="/memoryalbum">
+              <Link className="nav-link fw-semibold" to="/memoryalbum">
                 Memory
               </Link>
             </li>
 
-            {/* <li className="nav-item">
-              <Link className="nav-link navbar-brand fw-bold" to="/tictoe">
-                Tic Toe Game
-              </Link>
-            </li> */}
-
             <li className="nav-item">
-              <Link className="nav-link navbar-brand fw-bold" to="/contact">
+              <Link className="nav-link fw-semibold" to="/contact">
                 Contact
               </Link>
             </li>
-            {/* Dropdown */}
+
+            {/* Event Dropdown */}
             <li className="nav-item dropdown">
               <a
-                className="nav-link dropdown-toggle navbar-brand fw-bold"
+                className="nav-link dropdown-toggle fw-semibold"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -65,26 +62,16 @@ const Header = () => {
                 Event
               </a>
               <ul className="dropdown-menu">
-                <li>
-                  <Link className="dropdown-item" to="/post">
-                    Add Event
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/view">
-                    View Event
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/tictoe">
-                    Edit Event
-                  </Link>
-                </li>
+                <li><Link className="dropdown-item" to="/post">Add Event</Link></li>
+                <li><Link className="dropdown-item" to="/view">View Event</Link></li>
+                <li><Link className="dropdown-item" to="/tictoe">Edit Event</Link></li>
               </ul>
             </li>
+
+            {/* Game Dropdown */}
             <li className="nav-item dropdown">
               <a
-                className="nav-link dropdown-toggle navbar-brand fw-bold"
+                className="nav-link dropdown-toggle fw-semibold"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -92,32 +79,23 @@ const Header = () => {
                 Game
               </a>
               <ul className="dropdown-menu">
-                <li>
-                  <Link className="dropdown-item" to="/addgame">
-                    Add Game
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/viewgame">
-                    View Match
-                  </Link>
-                </li>
+                <li><Link className="dropdown-item" to="/addgame">Add Game</Link></li>
+                <li><Link className="dropdown-item" to="/viewgame">View Match</Link></li>
               </ul>
             </li>
+
           </ul>
 
-          {/* Right side */}
-          <div className="d-flex align-items-center gap-3">
-            {/* Profile Image */}
+          {/* Right Side */}
+          <div className="d-flex align-items-center gap-2 mt-3 mt-lg-0">
             <img
               src={user.imageUr}
               alt="profile"
               className="rounded-circle border"
-              width="45"
-             
+              width="40"
+              height="40"
             />
 
-            {/* Logout */}
             <button
               className="btn btn-outline-warning btn-sm"
               onClick={handleLogout}
