@@ -51,6 +51,12 @@ const Header = () => {
               </Link>
             </li>
 
+             <li className="nav-item">
+              <Link className="nav-link fw-semibold" to="/prescription">
+                Prescription
+              </Link>
+            </li>
+
             {/* Event Dropdown */}
             <li className="nav-item dropdown">
               <a
@@ -68,8 +74,10 @@ const Header = () => {
               </ul>
             </li>
 
+             
+
             {/* Game Dropdown */}
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle fw-semibold"
                 href="#"
@@ -82,7 +90,7 @@ const Header = () => {
                 <li><Link className="dropdown-item" to="/addgame">Add Game</Link></li>
                 <li><Link className="dropdown-item" to="/viewgame">View Match</Link></li>
               </ul>
-            </li>
+            </li> */}
 
           </ul>
 

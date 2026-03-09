@@ -10,6 +10,7 @@ import AddGamePage from "./AddGamePage";
 import ViewGamesPage from "./ViewGamePage";
 import TicToeGame from "./TicToeGame";
 import MemoryAlbum from "./MemoryAlbum";
+import Prescription from "./Prescription";
 
 export default function MainRoute() {
   return (
@@ -81,6 +82,15 @@ export default function MainRoute() {
         element={
           <ProtectedRoute>
             <MemoryAlbum />
+          </ProtectedRoute>
+        }
+      />
+
+       <Route
+        path="/prescription"
+        element={
+          <ProtectedRoute>
+            <Prescription />
           </ProtectedRoute>
         }
       />

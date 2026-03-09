@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-
-
+import VideoPlayer from "./VideoPlayer";
 
 const PostsView = () => {
   const [books, setBooks] = useState([
     { id: 1, title: "React Basics", author: "John Doe" },
     { id: 2, title: "JavaScript Guide", author: "Jane Smith" },
-      { id: 3, title: "TypeScript note", author: "Bob Johnson" },
+    { id: 3, title: "TypeScript note", author: "Bob Johnson" },
   ]);
 
   const [title, setTitle] = useState("");
@@ -28,11 +27,11 @@ const PostsView = () => {
   const filteredBooks = books.filter(
     (b) =>
       b.title.toLowerCase().includes(search.toLowerCase()) ||
-      b.author.toLowerCase().includes(search.toLowerCase())
+      b.author.toLowerCase().includes(search.toLowerCase()),
   );
 
   return (
-   <div style={{ padding: 20 }}>
+    <div style={{ padding: 20 }}>
       <h2>📚 e-Library Mini System</h2>
 
       <input
@@ -47,7 +46,8 @@ const PostsView = () => {
       />
       <button onClick={addBook}>Add Book</button>
 
-      <br /><br />
+      <br />
+      <br />
 
       <input
         placeholder="Search..."
@@ -57,12 +57,19 @@ const PostsView = () => {
 
       <ul>
         {filteredBooks.map((book) => (
-          <motion.li key={book.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <motion.li
+            key={book.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
             {book.title} — {book.author}
             {/* <button onClick={() => deleteBook(book.id)}>❌</button> */}
           </motion.li>
         ))}
       </ul>
+      <h1>ভিডিও প্লেয়ার উদাহরণ</h1>
+      <VideoPlayer src="vedio1.mp4" width={300} height={180} />
+      <VideoPlayer src="vedio2.mp4" width={300} height={480} />
     </div>
   );
 };

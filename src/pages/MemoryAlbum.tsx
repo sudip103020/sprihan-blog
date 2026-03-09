@@ -2,7 +2,6 @@ import { useState, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { people } from "./memorylist";
 
-
 interface Person {
   id: number;
   Date_of_memory: string;
@@ -11,7 +10,7 @@ interface Person {
 }
 
 const user = {
-  title: "👨‍👩‍👧‍👦 Sprihan Halder’s All Memories",
+  title: "🎉 Sprihan Halder’s All Memories",
   name: "Sprihan Haldar",
   DOB: "30-10-2025",
   place: "Dhaka, Bangladesh",
@@ -32,29 +31,28 @@ const MemoryAlbum = () => {
     setShowModal(true);
   };
 
-   const filteredBooks = people.filter(
+  const filteredBooks = people.filter(
     (b) =>
       b.Date_of_memory.toLowerCase().includes(search.toLowerCase()) ||
-      b.Description.toLowerCase().includes(search.toLowerCase())
+      b.Description.toLowerCase().includes(search.toLowerCase()),
   );
 
   const highlightText = (text: string) => {
-  if (!search) return text;
+    if (!search) return text;
 
-  const regex = new RegExp(`(${search})`, "gi");
-  const parts = text.split(regex);
+    const regex = new RegExp(`(${search})`, "gi");
+    const parts = text.split(regex);
 
-  return parts.map((part, index) =>
-    part.toLowerCase() === search.toLowerCase() ? (
-      <span key={index} style={{ backgroundColor: "yellow" }}>
-        {part}
-      </span>
-    ) : (
-      part
-    )
-  );
-};
-
+    return parts.map((part, index) =>
+      part.toLowerCase() === search.toLowerCase() ? (
+        <span key={index} style={{ backgroundColor: "yellow" }}>
+          {part}
+        </span>
+      ) : (
+        part
+      ),
+    );
+  };
 
   const nextImage = () => {
     setActiveIndex((prev) => (prev + 1) % activeImages.length);
@@ -70,20 +68,21 @@ const MemoryAlbum = () => {
   );
 
   const listitem = filteredBooks.map((person: Person, idx) => (
-  <div key={person.id} className="col-12 col-md-6 col-lg-4 profile-sticky">
-
+    <div
+      key={person.id}
+      className={`col-12 ${window.innerWidth < 768 ? "" : "col-md-6 col-lg-4"} profile-sticky`}
+    >
       <div className="card shadow-sm p-3 rounded-4 h-auto">
         <div>
           {/* DATE & DESCRIPTION */}
           <div className="card shadow-sm p-3 rounded-4 bg-primary-subtle">
-         <h6 className="text-danger-emphasis text-center">
-  {highlightText(person.Date_of_memory)}
-</h6>
+            <h6 className="text-danger-emphasis text-center">
+              {highlightText(person.Date_of_memory)}
+            </h6>
 
-<p className="text-warning-emphasis">
-  {highlightText(person.Description)}
-</p>
-
+            <p className="text-warning-emphasis">
+              {highlightText(person.Description)}
+            </p>
           </div>
 
           {/* 📸 ALBUM GRID */}
@@ -95,6 +94,9 @@ const MemoryAlbum = () => {
             style={{
               overflowX: "auto",
               whiteSpace: "nowrap",
+              paddingBottom: 5,
+              marginLeft: window.innerWidth < 500 ? -5 : 0,
+              marginRight: window.innerWidth < 500 ? -5 : 0,
             }}
           >
             {person.imageId.map((img, index) => (
@@ -129,8 +131,8 @@ const MemoryAlbum = () => {
         className="d-flex flex-column gap-4"
         style={{
           maxWidth: 1200,
-          width: "100%",
-          padding: "20px",
+          width: window.innerWidth < 768 ? "95%" : "100%",
+          padding: window.innerWidth < 768 ? "10px" : "20px",
           minHeight: "100vh",
         }}
       >
@@ -141,6 +143,8 @@ const MemoryAlbum = () => {
             top: 40,
 
             height: "fit-content",
+            paddingLeft: window.innerWidth < 768 ? 10 : 0,
+            paddingRight: window.innerWidth < 768 ? 10 : 0,
           }}
         >
           <div className="card shadow-lg p-4 rounded-4">
@@ -168,17 +172,16 @@ const MemoryAlbum = () => {
         </div>
 
         <input
-        placeholder="Search By Date or Description..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-
+          placeholder="Search By Date (DD-MM-YYYY) or Description..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
 
         {/* RIGHT CONTENT */}
         <div
           style={{
             overflowY: "auto",
-          
+
             maxHeight: "calc(100vh - 160px)",
             paddingRight: 5,
           }}
@@ -190,7 +193,9 @@ const MemoryAlbum = () => {
       {/* 🔍 MODAL */}
       {showModal && (
         <div className="modal fade show d-block" tabIndex={-1}>
-          <div className="modal-dialog modal-dialog-centered modal-lg">
+          <div
+            className={`modal-dialog modal-dialog-centered ${window.innerWidth < 500 ? "" : "modal-lg"}`}
+          >
             <div className="modal-content rounded-4">
               <div className="modal-header">
                 <h5 className="modal-title">📸 Memory Album</h5>

@@ -123,9 +123,132 @@ export const people = [
 
   {
     id: 17,
-    Date_of_memory: "11-12-2025",
-    Description: "বাবাইকে দেখতে মার অফিস  থেকে আসছে এবং বাবার কোলে কিছুক্ষণ ",
-   imageId:  ["babay62.jpeg", "babay63.jpeg", "babay64.jpeg" , "babay65.jpeg", "babay66.jpeg" , "babay67.jpeg"],
+    Date_of_memory: "13-12-2025",
+    Description: "বাবাই তার দাদীর সাথে এমন ভাবে ঘুমায় যেন দাদী তার বালিশ",
+   imageId:  ["babay101.jpeg", "babay102.jpeg"],
+  },
+   {
+    id: 18,
+    Date_of_memory: "19-12-2025",
+    Description: "বাবাই এখন উপুর হতে পারে  ",
+   imageId:  ["babay107.jpeg", "babay108.jpeg", "babay109.jpeg" , "babay105.jpeg", "babay106.jpeg" ],
   },
 
+    {
+    id: 19,
+    Date_of_memory: "26-12-2025",
+    Description: "বাবাই  মাথায় টুপি পরছে",
+   imageId:  ["babay130.jpeg", "babay131.jpeg", "babay109.jpeg" , "babay105.jpeg", "babay106.jpeg" ],
+  },
+
+   {
+    id: 20,
+    Date_of_memory: "31-12-2025",
+    Description: "বাবাই  এর আজ দুই মাস পূর্ন হলো",
+   imageId:  ["babay132.jpeg", "babay133.jpeg", "babay134.jpeg" , "babay135.jpeg", "babay136.jpeg", "babay137.jpeg", ],
+  },
+ {
+    id: 21,
+    Date_of_memory: "01-01-2026",
+    Description: "বাবাই  আজ নতুন খেলনা পেয়েছে",
+   imageId:  ["babay132.jpeg", "babay133.jpeg", "babay134.jpeg" , "babay135.jpeg", "babay136.jpeg", "babay137.jpeg", ],
+  },
+  {
+    id: 22,
+    Date_of_memory: "03-01-2026",
+    Description: "বাবাই তার মার সাথে টামি  টাইম কাটাচ্ছে  ",
+   imageId:  ["babay139.jpeg", "babay140.jpeg", "babay138.jpeg", ],
+  },
+  
+  {
+    id: 23,
+    Date_of_memory: "06-01-2026",
+    Description: "বাবা তার বাবাই এর  সাথে ঘুমাচ্ছে",
+   imageId:  ["babay141.jpeg", "babay142.jpeg", "babay143.jpeg", ],
+  },
+  {
+    id: 24,
+    Date_of_memory: "10-01-2026",
+    Description: "বাবাই আজ রোটা টেক টিকা দিতে যাবে ",
+   imageId:  ["babay144.jpeg", "babay145.jpeg", "babay146.jpeg","babay147.jpeg","babay148.jpeg", ],
+  },
+  {
+    id: 25,
+    Date_of_memory: "24-01-2026",
+    Description: "বাবাই তার বাবা মার সাথে কিছুক্ষণ",
+   imageId:  ["babay149.jpeg", "babay150.jpeg", "babay151.jpeg","babay152.jpeg","babay153.jpeg","babay154.jpeg", ],
+  },
+  {
+    id: 26,
+    Date_of_memory: "30-01-2026",
+    Description: "বাবাই আজ টাক হয়েছে ",
+   imageId:  ["babay155.jpeg", "babay156.jpeg", "babay157.jpeg","babay158.jpeg", ],
+  },
+  {
+    id: 27,
+    Date_of_memory: "30-01-2026",
+    Description: "বাবাই এর আজ তিম মাস পূর্ণ হলো ",
+   imageId:  ["babay159.jpeg", "babay160.jpeg", "babay161.jpeg","babay162.jpeg","babay163.jpeg","babay164.jpeg", ],
+  },
+  {
+    id: 28,
+    Date_of_memory: "01-02-2026",
+    Description: "বাবাই আজ বর সেজেছে ",
+   imageId:  ["babay165.jpeg", "babay166.jpeg", "babay167.jpeg", ],
+  },
+  {
+    id: 29,
+    Date_of_memory: "07-02-2026",
+    Description: "বাবাই একা একা দুধ খেতে শিখে গেছে",
+   imageId:  ["babay168.jpeg", "babay170.jpeg", "babay171.jpeg", "babay172.jpeg",],
+  },
+  {
+    id: 30,
+    Date_of_memory: "11-02-2026",
+    Description: "বাবাই  এর দুধ রাখার জন্য নতুন ডাবল ডোর ফ্রিজ কিন হয়েছে",
+   imageId:  ["babay173.jpeg", "babay174.jpeg", "babay175.jpeg", ],
+  },
+  {
+    id: 31,
+    Date_of_memory: "14-02-2026",
+    Description: "বাবাই  এর  রোটা টেক টিকার ২য় ডোজ দেওয়া হয়েছে",
+   imageId:  ["babay176.jpeg", "babay177.jpeg", "babay178.jpeg","babay179.jpeg","babay180.jpeg", ],
+  },
+  {
+    id: 32,
+    Date_of_memory: "20-02-2026",
+    Description: "আজ সবাই মিলে বাবাইকে নিয়ে মন্দিরে ঘুরতে গেছিলো",
+   imageId:  ["babay181.jpeg", "babay182.jpeg", "babay183.jpeg","babay184.jpeg","babay185.jpeg", ],
+  },
+   {
+    id: 33,
+    Date_of_memory: "27-02-2026",
+    Description: "বাবাই কে দেখতে তার মাস্তুতে দাদা দাদি আসছে এবং তারা মন্দিরে ঘুরতে গেছে",
+   imageId:  ["babay186.jpeg", "babay187.jpeg","babay188.jpeg", ],
+  },
+  {
+    id: 34,
+    Date_of_memory: "28-02-2026",
+    Description: "বাবাই বাবার ঘুঘুতে উঠছে",
+   imageId:  ["babay189.jpeg",  ],
+  },
+  {
+    id: 35,
+    Date_of_memory: "01-03-2026",
+    Description: "বাবাই এর আজ ৪ মাস পূর্ন হলো",
+   imageId:  ["babay190.jpeg", "babay191.jpeg","babay192.jpeg","babay193.jpeg","babay194.jpeg", "babay195.jpeg", ],
+  },
+   {
+    id: 36,
+    Date_of_memory: "01-03-2026",
+    Description: "বাবাই কে নিয়ে তার  দাদা দাদি পার্কে ঘুরতে গেছে",
+   imageId:  ["babay201.jpeg", "babay202.jpeg","babay203.jpeg","babay204.jpeg","babay205.jpeg","babay206.jpeg","babay207.jpeg","babay208.jpeg", ],
+  },
+  {
+    id: 37,
+    Date_of_memory: "03-03-2026",
+    Description: "বাবাই  মাস্তুতে দাদা দাদি এর সাথে সদরঘাটে ঘুরতে গেছে",
+   imageId:  ["babay196.jpeg", "babay197.jpeg","babay198.jpeg","babay199.jpeg","babay200.jpeg", ],
+  },
 ];
+
