@@ -108,3 +108,24 @@ img {
     position: static !important;
   }
 }
+body{
+overflow-x:hidden;
+}
+
+img{
+max-width:100%;
+height:auto;
+}
+.card{
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+input{
+width:100%;
+padding:8px;
+border-radius:8px;
+border:1px solid #ddd;
+}

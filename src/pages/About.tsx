@@ -49,33 +49,17 @@ const About = () => {
   ));
 
   return (
-  <div
-    className="d-flex justify-content-center"
-    style={{ minHeight: "100vh" }}
-  >
-    {/* 🔒 CENTER WRAPPER */}
-    <div
-      className="d-flex gap-4"
-      style={{
-        maxWidth: 1200,
-        width: "100%",
-        padding: "20px",
-      }}
-    >
-      {/* LEFT FIXED / STICKY */}
-      <div
-        style={{
-          position: "sticky",
-          top: 20,
-          height: "fit-content",
-          minWidth: 280,
-        }}
-      >
-        <div className="card shadow-lg p-4 rounded-4 text-left">
+<div className="container py-4">
+  <div className="row g-4">
+
+    {/* LEFT PROFILE */}
+    <div className="col-12 col-lg-4">
+      <div style={{ position: "sticky", top: 20 }}>
+        <div className="card shadow-lg p-4 rounded-4 text-center">
+
           <img
-            className="rounded-circle border mb-3 align-self-center"
+            className="rounded-circle border mb-3 mb-3 mx-auto d-block"
             src={user.imageUr2}
-            alt={"Photo of " + user.title}
             style={{
               width: user.imageSize,
               height: user.imageSize1,
@@ -85,24 +69,33 @@ const About = () => {
 
           <h5 className="text-danger-emphasis">{user.title}</h5>
           <p className="text-warning-emphasis mb-1">{user.name}</p>
+
           <small className="text-info-emphasis d-block">
             DOB: {user.DOB}
           </small>
+
           <small className="text-secondary-emphasis">
             {user.place}
           </small>
+
         </div>
       </div>
-
-      {/* RIGHT SCROLL CONTENT */}
-      <div className="flex-grow-1">
-        <h3 className="fw-bold text-primary mb-4">
-          👨‍👩‍👧‍👦 Family Members
-        </h3>
-        {listitem}
-      </div>
     </div>
+
+    {/* RIGHT CONTENT */}
+    <div className="col-12 col-lg-8">
+
+      <h3 className="fw-bold text-primary mb-4">
+        👨‍👩‍👧‍👦 Family Members
+      </h3>
+
+      {listitem}
+
+    </div>
+
   </div>
+</div>
+
 );
 
 };

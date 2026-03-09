@@ -70,8 +70,7 @@ const MemoryAlbum = () => {
   const listitem = filteredBooks.map((person: Person, idx) => (
     <div
       key={person.id}
-      className={`col-12 ${window.innerWidth < 768 ? "" : "col-md-6 col-lg-4"} profile-sticky`}
-    >
+     className="col-12 col-sm-6 col-lg-4">
       <div className="card shadow-sm p-3 rounded-4 h-auto">
         <div>
           {/* DATE & DESCRIPTION */}
@@ -106,8 +105,9 @@ const MemoryAlbum = () => {
                 alt="memory"
                 className="rounded-3"
                 style={{
-                  height: window.innerWidth < 500 ? 60 : 80,
-                  width: window.innerWidth < 500 ? 60 : 80,
+                 height: 70,
+width: 70,
+
 
                   objectFit: "cover",
                   cursor: "pointer",
@@ -128,13 +128,8 @@ const MemoryAlbum = () => {
       style={{ minHeight: "100vh" }}
     >
       <div
-        className="d-flex flex-column gap-4"
-        style={{
-          maxWidth: 1200,
-          width: window.innerWidth < 768 ? "95%" : "100%",
-          padding: window.innerWidth < 768 ? "10px" : "20px",
-          minHeight: "100vh",
-        }}
+       className="container py-3"
+
       >
         {/* LEFT PROFILE */}
         <div
@@ -148,7 +143,8 @@ const MemoryAlbum = () => {
           }}
         >
           <div className="card shadow-lg p-4 rounded-4">
-            <div className="d-flex align-items-center">
+         <div className="d-flex align-items-center flex-wrap gap-3">
+
               <div>
                 <h5 className="text-danger-emphasis">{user.title}</h5>
                 <p className="text-warning-emphasis mb-1">{user.name}</p>
@@ -158,7 +154,8 @@ const MemoryAlbum = () => {
                 <small className="text-secondary-emphasis">{user.place}</small>
               </div>
               <img
-                className="rounded-circle border ms-auto"
+               className="rounded-circle border ms-auto ms-md-auto mx-auto"
+
                 src={user.imageUr2}
                 alt="profile"
                 style={{
@@ -182,7 +179,8 @@ const MemoryAlbum = () => {
           style={{
             overflowY: "auto",
 
-            maxHeight: "calc(100vh - 160px)",
+            maxHeight: window.innerWidth < 768 ? "auto" : "calc(100vh - 160px)",
+
             paddingRight: 5,
           }}
         >

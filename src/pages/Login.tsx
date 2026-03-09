@@ -66,7 +66,7 @@ const Login = () => {
         </form>
 
         <p className="text-center mt-3 text-muted" style={{ fontSize: "14px" }}>
-          © Sprihan_App
+          © Sprihan_Blog 2026. All rights reserved.
         </p>
       </div>
     </div>

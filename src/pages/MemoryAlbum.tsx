@@ -70,7 +70,8 @@ const MemoryAlbum = () => {
   const listitem = filteredBooks.map((person: Person, idx) => (
     <div
       key={person.id}
-      className={`col-12 ${window.innerWidth < 768 ? "" : "col-md-6 col-lg-4"} profile-sticky`}
+      className="col-12 col-sm-6 col-lg-4 profile-sticky"
+
     >
       <div className="card shadow-sm p-3 rounded-4 h-auto">
         <div>
@@ -106,8 +107,10 @@ const MemoryAlbum = () => {
                 alt="memory"
                 className="rounded-3"
                 style={{
-                  height: window.innerWidth < 500 ? 60 : 80,
-                  width: window.innerWidth < 500 ? 60 : 80,
+                 height: 80,
+width: 80,
+maxWidth: "100%",
+
 
                   objectFit: "cover",
                   cursor: "pointer",
@@ -127,15 +130,8 @@ const MemoryAlbum = () => {
       className="d-flex justify-content-center"
       style={{ minHeight: "100vh" }}
     >
-      <div
-        className="d-flex flex-column gap-4"
-        style={{
-          maxWidth: 1200,
-          width: window.innerWidth < 768 ? "95%" : "100%",
-          padding: window.innerWidth < 768 ? "10px" : "20px",
-          minHeight: "100vh",
-        }}
-      >
+     <div className="container py-3">
+
         {/* LEFT PROFILE */}
         <div
           style={{
@@ -182,7 +178,8 @@ const MemoryAlbum = () => {
           style={{
             overflowY: "auto",
 
-            maxHeight: "calc(100vh - 160px)",
+           maxHeight: window.innerWidth < 768 ? "auto" : "calc(100vh - 160px)",
+
             paddingRight: 5,
           }}
         >
