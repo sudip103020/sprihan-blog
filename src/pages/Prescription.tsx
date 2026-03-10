@@ -10,10 +10,11 @@ interface Person {
 }
 
 const user = {
-  title: "📝 Sprihan Halder’s All Prescription",
-  name: "Sprihan Haldar",
+  title: "📝 Sprihan Halder’s All Prescriptions",
+  name: "Sprihan Halder",
   DOB: "30-10-2025",
   place: "Dhaka, Bangladesh",
+  Email: "sprihanhalder@gmail.com",
   imageUr2: "/babu1.png",
   imageSize: 100,
   imageSize1: 100,
@@ -68,9 +69,7 @@ const MemoryAlbum = () => {
   );
 
   const listitem = filteredBooks.map((person: Person, idx) => (
-    <div
-      key={person.id}
-     className="col-12 col-sm-6 col-lg-4">
+    <div key={person.id} className="col-12 col-sm-6 col-lg-4">
       <div className="card shadow-sm p-3 rounded-4 h-auto">
         <div>
           {/* DATE & DESCRIPTION */}
@@ -89,14 +88,8 @@ const MemoryAlbum = () => {
             ref={(el) => {
               (scrollRefs.current as HTMLDivElement[])[idx] = el!;
             }}
-            className="d-flex gap-2 mt-2"
-            style={{
-              overflowX: "auto",
-              whiteSpace: "nowrap",
-              paddingBottom: 5,
-              marginLeft: window.innerWidth < 500 ? -5 : 0,
-              marginRight: window.innerWidth < 500 ? -5 : 0,
-            }}
+             className="container py-3 px-2"
+            
           >
             {person.imageId.map((img, index) => (
               <img
@@ -105,9 +98,8 @@ const MemoryAlbum = () => {
                 alt="memory"
                 className="rounded-3"
                 style={{
-                 height: 70,
-width: 70,
-
+                  height: 70,
+                  width: 70,
 
                   objectFit: "cover",
                   cursor: "pointer",
@@ -127,10 +119,7 @@ width: 70,
       className="d-flex justify-content-center"
       style={{ minHeight: "100vh" }}
     >
-      <div
-       className="container py-3"
-
-      >
+      <div className="container py-3">
         {/* LEFT PROFILE */}
         <div
           style={{
@@ -143,19 +132,20 @@ width: 70,
           }}
         >
           <div className="card shadow-lg p-4 rounded-4">
-         <div className="d-flex align-items-center flex-wrap gap-3">
-
+            <div className="d-flex align-items-center flex-wrap gap-3">
               <div>
-                <h5 className="text-danger-emphasis">{user.title}</h5>
-                <p className="text-warning-emphasis mb-1">{user.name}</p>
+                    <h5 className="text-danger-emphasis">{user.title}</h5>
+                <p className="text-warning-emphasis mb-1">Name: {user.name}</p>
                 <small className="text-info-emphasis d-block">
                   DOB: {user.DOB}
                 </small>
-                <small className="text-secondary-emphasis">{user.place}</small>
+                <small className="text-info-emphasis d-block">
+                  Email: {user.Email}
+                </small>
+                <small className="text-secondary-emphasis">Birth Place: {user.place}</small>
               </div>
               <img
-               className="rounded-circle border ms-auto ms-md-auto mx-auto"
-
+                 className="rounded-circle border ms-auto"
                 src={user.imageUr2}
                 alt="profile"
                 style={{

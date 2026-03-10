@@ -3,9 +3,10 @@ import { people } from "./person";
 import { getImageUrl } from "./imagelist";
 
 const user = {
-  title: "Welcome to Sprihan Haldar’s Blog",
-  name: "Sprihan Haldar",
+  title: "👨‍👩‍👧‍👦 Welcome to Sprihan Halder’s Family ",
+  name: "Sprihan Halder",
   DOB: "30-10-2025",
+  Email: "sprihanhalder@gmail.com",
   place: "Dhaka, Bangladesh",
   imageUr2: "/babu1.png",
   imageSize: 230,
@@ -67,16 +68,15 @@ const About = () => {
             }}
           />
 
-          <h5 className="text-danger-emphasis">{user.title}</h5>
-          <p className="text-warning-emphasis mb-1">{user.name}</p>
-
-          <small className="text-info-emphasis d-block">
-            DOB: {user.DOB}
-          </small>
-
-          <small className="text-secondary-emphasis">
-            {user.place}
-          </small>
+              <h5 className="text-danger-emphasis">{user.title}</h5>
+                <p className="text-warning-emphasis mb-1">Name: {user.name}</p>
+                <small className="text-info-emphasis d-block">
+                  DOB: {user.DOB}
+                </small>
+                <small className="text-info-emphasis d-block">
+                  Email: {user.Email}
+                </small>
+                <small className="text-secondary-emphasis">Birth Place: {user.place}</small>
 
         </div>
       </div>

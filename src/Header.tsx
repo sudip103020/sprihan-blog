@@ -39,21 +39,36 @@ const Header = () => {
               </Link>
             </li>
 
-            <li className="nav-item">
-              <Link className="nav-link fw-semibold" to="/memoryalbum">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle fw-semibold"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
                 Memory
-              </Link>
+              </a>
+              <ul className="dropdown-menu">
+                <li><Link className="dropdown-item" to="/memoryalbum">First Year</Link></li>
+                
+              </ul>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link fw-semibold" to="/contact">
-                Contact
+              <Link className="nav-link fw-semibold" to="/video">
+                Video
               </Link>
             </li>
 
              <li className="nav-item">
               <Link className="nav-link fw-semibold" to="/prescription">
                 Prescription
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link fw-semibold" to="/contact">
+                Contact
               </Link>
             </li>
 

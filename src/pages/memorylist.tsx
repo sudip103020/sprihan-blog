@@ -250,5 +250,17 @@ export const people = [
     Description: "বাবাই  মাস্তুতে দাদা দাদি এর সাথে সদরঘাটে ঘুরতে গেছে",
    imageId:  ["babay196.jpeg", "babay197.jpeg","babay198.jpeg","babay199.jpeg","babay200.jpeg", ],
   },
+  {
+    id: 38,
+    Date_of_memory: "06-03-2026",
+    Description: "বাবাই  তার ঠাকুমার সাথে ম্যাচিং ড্রেস পড়ছে ",
+   imageId:  ["babay210.jpeg", "babay211.jpeg",]
+  },
+  {
+    id: 39,
+    Date_of_memory: "08-03-2026",
+    Description: "বাবাই একা একা উপুর হওয়া শিখে গেছে ",
+   imageId:  ["babay209.jpeg",  ],
+  },
 ];
 

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, } from "react";
 
 interface VideoPlayerProps {
   src: string;
@@ -12,25 +12,25 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   height = 200,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const [isPlaying, setIsPlaying] = useState(false);
 
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
-  };
+  // const togglePlay = () => {
+  //   if (!videoRef.current) return;
+  //   if (videoRef.current.paused) {
+  //     videoRef.current.play();
+  //     setIsPlaying(true);
+  //   } else {
+  //     videoRef.current.pause();
+  //     setIsPlaying(false);
+  //   }
+  // };
 
-  const handleFullscreen = () => {
-    if (!videoRef.current) return;
-    if (videoRef.current.requestFullscreen) {
-      videoRef.current.requestFullscreen();
-    }
-  };
+  // const handleFullscreen = () => {
+  //   if (!videoRef.current) return;
+  //   if (videoRef.current.requestFullscreen) {
+  //     videoRef.current.requestFullscreen();
+  //   }
+  // };
 
   return (
     <div style={{ maxWidth: width, margin: "auto" }}>
@@ -50,12 +50,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           justifyContent: "center",
         }}
       >
-        <button onClick={togglePlay} style={{ padding: "5px 10px" }}>
+        {/* { <button onClick={togglePlay} style={{ padding: "5px 10px" }}>
           {isPlaying ? "Pause ⏸️" : "Play ▶️"}
         </button>
         <button onClick={handleFullscreen} style={{ padding: "5px 10px" }}>
           Fullscreen 🔳
-        </button>
+        </button> *} */}
       </div>
     </div>
   );

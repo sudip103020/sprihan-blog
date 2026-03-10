@@ -1,77 +1,57 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import VideoPlayer from "./VideoPlayer";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const PostsView = () => {
-  const [books, setBooks] = useState([
-    { id: 1, title: "React Basics", author: "John Doe" },
-    { id: 2, title: "JavaScript Guide", author: "Jane Smith" },
-    { id: 3, title: "TypeScript note", author: "Bob Johnson" },
-  ]);
+export default function LocationSection() {
 
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [search, setSearch] = useState("");
+  const latitude = 23.692194;
+  const longitude = 90.432056;
 
-  const addBook = () => {
-    if (!title.trim() || !author.trim()) return;
-    setBooks([...books, { id: Date.now(), title, author }]);
-    setTitle("");
-    setAuthor("");
-  };
-
-  // const deleteBook = (id) => {
-  //   setBooks(books.filter((b) => b.id !== id));
-  // };
-
-  const filteredBooks = books.filter(
-    (b) =>
-      b.title.toLowerCase().includes(search.toLowerCase()) ||
-      b.author.toLowerCase().includes(search.toLowerCase()),
-  );
+  const mapLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2>📚 e-Library Mini System</h2>
+    <div className="container py-5">
 
-      <input
-        placeholder="Book title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <input
-        placeholder="Author"
-        value={author}
-        onChange={(e) => setAuthor(e.target.value)}
-      />
-      <button onClick={addBook}>Add Book</button>
+      {/* Title */}
+      <div className="text-center mb-4">
+        <h2 className="fw-bold text-danger">📍 Memory Location</h2>
+        <p className="text-muted">
+          Where this beautiful moment happened
+        </p>
+      </div>
 
-      <br />
-      <br />
+      {/* Card */}
+      <div className="card shadow-lg border-0 rounded-4 overflow-hidden">
 
-      <input
-        placeholder="Search..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+        {/* Google Map */}
+        <iframe
+          src={`https://www.google.com/maps?q=${latitude},${longitude}&z=16&output=embed`}
+          width="100%"
+          height="350"
+          style={{ border: 0 }}
+          loading="lazy"
+        ></iframe>
 
-      <ul>
-        {filteredBooks.map((book) => (
-          <motion.li
-            key={book.id}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+        {/* Location Info */}
+        <div className="p-4 text-center bg-light">
+
+          <h5 className="fw-bold mb-2">📍 Exact Location</h5>
+
+          <p className="text-muted mb-3">
+            23°41'31.9"N 90°25'55.4"E
+          </p>
+
+          <a
+            href={mapLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-danger px-4 py-2 rounded-pill"
           >
-            {book.title} — {book.author}
-            {/* <button onClick={() => deleteBook(book.id)}>❌</button> */}
-          </motion.li>
-        ))}
-      </ul>
-      <h1>ভিডিও প্লেয়ার উদাহরণ</h1>
-      <VideoPlayer src="vedio1.mp4" width={300} height={180} />
-      <VideoPlayer src="vedio2.mp4" width={300} height={480} />
+            📍 Open in Google Maps
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
   );
-};
-
-export default PostsView;
+}

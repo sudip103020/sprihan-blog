@@ -11,6 +11,8 @@ import ViewGamesPage from "./ViewGamePage";
 import TicToeGame from "./TicToeGame";
 import MemoryAlbum from "./MemoryAlbum";
 import Prescription from "./Prescription";
+import Video from "./Video";
+
 
 export default function MainRoute() {
   return (
@@ -85,6 +87,17 @@ export default function MainRoute() {
           </ProtectedRoute>
         }
       />
+
+       <Route
+        path="/video"
+        element={
+          <ProtectedRoute>
+            <Video />
+          </ProtectedRoute>
+        }
+      />
+
+     
 
        <Route
         path="/prescription"
