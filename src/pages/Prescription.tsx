@@ -15,7 +15,7 @@ const user = {
   DOB: "30-10-2025",
   place: "Dhaka, Bangladesh",
   Email: "sprihanhalder@gmail.com",
-  imageUr2: "/babu1.png",
+  imageUr2: "/babay84.jpeg",
   imageSize: 100,
   imageSize1: 100,
 };

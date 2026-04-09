@@ -262,5 +262,47 @@ export const people = [
     Description: "বাবাই একা একা উপুর হওয়া শিখে গেছে ",
    imageId:  ["babay209.jpeg",  ],
   },
+  {
+    id: 40,
+    Date_of_memory: "12-03-2026",
+    Description: "বাবাই আজ প্রথম পরিবারের সাথে কারে করে বিয়ের প্রোগ্রামে গিয়েছে ",
+   imageId:  ["babay212.jpeg", "babay213.jpeg","babay214.jpeg","babay215.jpeg","babay216.jpeg", "babay217.jpeg","babay218.jpeg", "babay219.jpeg",  ],
+  },
+  {
+    id: 41,
+    Date_of_memory: "17-03-2026",
+    Description: "বাবাই আজ প্রথম গ্রামের বাড়িতে যাচ্চে  পরিবারের সাথে ",
+   imageId:  ["babay220.jpeg", "babay221.jpeg","babay222.jpeg","babay223.jpeg","babay224.jpeg",  ],
+  },
+  {
+    id: 42,
+    Date_of_memory: "18-03-2026",
+    Description: "গ্রামের বাড়িতে বাবাই সবার কোলে উঠছে ",
+   imageId:  ["babay225.jpeg", "babay226.jpeg","babay227.jpeg","babay228.jpeg", "babay233.jpeg","babay234.jpeg",],
+  },
+  {
+    id: 43,
+    Date_of_memory: "19-03-2026",
+    Description: "বাবাই তার দাদু বাড়িতে ঘোরাঘুরি করছে  ",
+   imageId:  ["babay229.jpeg", "babay230.jpeg","babay231.jpeg","babay232.jpeg", ],
+  },
+  {
+    id: 44,
+    Date_of_memory: "27-03-2026",
+    Description: "বাবাই আজ সবার সাথে পূজা দেখতে রমনা কালী মন্দির গিয়েছে ",
+   imageId:  ["babay235.jpeg", "babay236.jpeg","babay237.jpeg","babay238.jpeg", ],
+  },
+  {
+    id: 45,
+    Date_of_memory: "30-03-2026",
+    Description: "আজ আমার ৫ মাস পুর্ণ  হয়েছে ",
+   imageId:  ["babay239.jpeg", "babay240.jpeg","babay241.jpeg","babay242.jpeg","babay243.jpeg", "babay244.jpeg",],
+  },
+   {
+    id: 46,
+    Date_of_memory: "03-04-2026",
+    Description: "বাবাই এর অন্নপ্রাশনের ড্রেস তার ঠাকুমা দিয়েছে আর থালা তার দাদু দিয়েছে ",
+   imageId:  ["babay245.jpeg", "babay246.jpeg","babay247.jpeg","babay248.jpeg","babay249.jpeg", ],
+  },
 ];
 

@@ -15,7 +15,7 @@ const AddPostPage = () => {
     if (image) formData.append("image", image);
 
     try {
-      const res = await fetch("http://localhost:9001/api/posts/save", {
+      const res = await fetch("http://localhost:8080/api/posts/save", {
         method: "POST",
         body: formData,
       });

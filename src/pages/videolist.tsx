@@ -82,6 +82,32 @@ export const people = [
     imageId:  "vedio3.mp4",
   },
 
-   
+  {
+    id: 12, 
+    Date_of_memory: "12 March 2026",
+    Description: "বাবাই এর প্রথম কার ভ্রমণ ",
+    imageId:  "vedio13.mp4",
+  },
 
+
+   {
+    id: 13, 
+    Date_of_memory: "19 March 2026",
+    Description: "বাবাই এর দাদু বাড়িতে গাছের সাথে খেলা ",
+    imageId:  "vedio14.mp4",
+  },
+
+  {
+    id: 14, 
+    Date_of_memory: "30 March 2026",
+    Description: "বাবাই এর মার সাথে খেলা ",
+    imageId:  "vedio15.mp4",
+  },
+
+  {
+    id: 15, 
+    Date_of_memory: "03 April 2026",
+    Description: "বাবাই এর  দাদা ডাক ফুটেছে ",
+    imageId:  "vedio16.mp4",
+  },
 ];

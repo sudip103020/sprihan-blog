@@ -12,6 +12,7 @@ import TicToeGame from "./TicToeGame";
 import MemoryAlbum from "./MemoryAlbum";
 import Prescription from "./Prescription";
 import Video from "./Video";
+import Prize from "./prize";
 
 
 export default function MainRoute() {
@@ -107,6 +108,17 @@ export default function MainRoute() {
           </ProtectedRoute>
         }
       />
+
+       <Route
+        path="/prize"
+        element={
+          <ProtectedRoute>
+            <Prize />
+          </ProtectedRoute>
+        }
+      />
+
+
       <Route
         path="/Header"
         element={

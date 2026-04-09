@@ -7,7 +7,7 @@ const Header = () => {
   };
 
   const user = {
-    imageUr: "/babu1.png",
+    imageUr: "/babay1.jpeg",
   };
 
   return (
@@ -63,6 +63,12 @@ const Header = () => {
              <li className="nav-item">
               <Link className="nav-link fw-semibold" to="/prescription">
                 Prescription
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link fw-semibold" to="/prize">
+                Prize
               </Link>
             </li>
 

@@ -8,7 +8,7 @@ const user = {
   DOB: "30-10-2025",
   Email: "sprihanhalder@gmail.com",
   place: "Dhaka, Bangladesh",
-  imageUr2: "/babu1.png",
+  imageUr2: "/babay182.jpeg",
   imageSize: 230,
   imageSize1: 230,
 };
