@@ -18,7 +18,31 @@ const MemoryAlbum = () => {
     {
       date: "03-11-2025",
       giver: "Grandmother (Paternal)",
-      prize: "Silver Locket Chain",
+      prize: "Silver Bicha",
+    },
+
+     {
+      date: "03-11-2025",
+        giver: "Nur(Friends of Mother)",
+      prize: "cloths 1 sets",
+    },
+
+    {
+      date: "03-11-2025",
+        giver: "takuma (Mother)",
+      prize: "Towel Set",
+    },
+
+    {
+      date: "03-11-2025",
+      giver: "Grandparents (Paternal)",
+      prize: "Silver kharu",
+    },
+
+    {
+      date: "03-11-2025",
+      giver: "Mother",
+      prize: "Silver Chain",
     },
 
      {
@@ -37,7 +61,7 @@ const MemoryAlbum = () => {
     {
       date: "13-12-2025",
       giver: "Grandfather (maternal)",
-      prize: "Golden Chain",
+      prize: "Golden ring",
     },
 
     {
@@ -45,10 +69,16 @@ const MemoryAlbum = () => {
       giver: "Ayesa (Colleague of Mother)",
       prize: "1000 Taka",
     },
+
+    {
+      date: "25-12-2025",
+      giver: "Jahangir (Colleague of Mother)",
+      prize: "1000 Taka",
+    },
      {
       date: "25-12-2025",
       giver: "Nurujaman (Colleague of Mother)",
-      prize: "cloths 1 sets",
+      prize: "cloths 2 sets",
     },
 
     {
@@ -72,7 +102,13 @@ const MemoryAlbum = () => {
     {
       date: "15-12-2025",
       giver: "Manisa & Ritu (Friends of Mother)",
-      prize: "Baby Carrier",
+      prize: "Baby Carrier Bag",
+    },
+
+     {
+      date: "15-12-2025",
+      giver: "Sandeep (Friends of Mother)",
+      prize: "cloths 2 sets",
     },
 
     {
@@ -130,6 +166,17 @@ const MemoryAlbum = () => {
       date: "22-03-2026",
       giver: "Nikil (father's Uncle Bari)",
       prize: "Thalabason",
+    },
+  {
+      date: "22-03-2026",
+      giver: "Ajrin (Mother's relative)",
+      prize: "500 Taka",
+    },
+
+     {
+      date: "22-03-2026",
+      giver: "Grandmother (Maternal)",
+      prize: "cloths 4 sets",
     },
 
     {
@@ -199,7 +246,7 @@ const MemoryAlbum = () => {
                     <th>#</th>
                     <th>Date</th>
                     <th>Who Gave</th>
-                    <th>Prize</th>
+                    <th>Gift</th>
                   </tr>
                 </thead>
 
