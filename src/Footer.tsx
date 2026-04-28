@@ -23,13 +23,13 @@ const Footer = () => {
                     </span>
 
                     <div className="d-flex gap-3 mt-2 mt-md-0">
-                        <a href="https://facebook.com" target="_blank" className="text-secondary social-icon fb" >
+                        <a href="https://www.facebook.com/share/14ecEanpppd/" target="_blank" className="text-secondary social-icon fb" >
                             <FaFacebook size={24} />
                         </a>
                         <a href="https://youtube.com" target="_blank" className="text-secondary social-icon yt">
                             <FaYoutube size={24} />
                         </a>
-                        <a href="https://github.com" target="_blank" className="text-secondary social-icon gh ">
+                        <a href="https://github.com/sudip103020/sprihan-blog" target="_blank" className="text-secondary social-icon gh ">
                             <FaGithub size={24} />
                         </a>
 

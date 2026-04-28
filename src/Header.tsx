@@ -13,7 +13,6 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
       <div className="container-fluid px-3">
-
         {/* Logo */}
         <Link className="navbar-brand fw-bold" to="/">
           ✍️ SprihanBlog
@@ -32,7 +31,6 @@ const Header = () => {
         {/* Menu */}
         <div className="collapse navbar-collapse" id="blogNavbar">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-
             <li className="nav-item">
               <Link className="nav-link fw-semibold" to="/about">
                 About
@@ -49,8 +47,11 @@ const Header = () => {
                 Memory
               </a>
               <ul className="dropdown-menu">
-                <li><Link className="dropdown-item" to="/memoryalbum">First Year</Link></li>
-                
+                <li>
+                  <Link className="dropdown-item" to="/memoryalbum">
+                    First Year(2025-26)
+                  </Link>
+                </li>
               </ul>
             </li>
 
@@ -60,7 +61,7 @@ const Header = () => {
               </Link>
             </li>
 
-             <li className="nav-item">
+            <li className="nav-item">
               <Link className="nav-link fw-semibold" to="/prescription">
                 Prescription
               </Link>
@@ -68,7 +69,7 @@ const Header = () => {
 
             <li className="nav-item">
               <Link className="nav-link fw-semibold" to="/prize">
-                Prize
+                Gifts
               </Link>
             </li>
 
@@ -79,7 +80,7 @@ const Header = () => {
             </li>
 
             {/* Event Dropdown */}
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle fw-semibold"
                 href="#"
@@ -89,13 +90,23 @@ const Header = () => {
                 Event
               </a>
               <ul className="dropdown-menu">
-                <li><Link className="dropdown-item" to="/post">Add Event</Link></li>
-                <li><Link className="dropdown-item" to="/view">View Event</Link></li>
-                <li><Link className="dropdown-item" to="/tictoe">Edit Event</Link></li>
+                <li>
+                  <Link className="dropdown-item" to="/post">
+                    Add Event
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/view">
+                    View Event
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/tictoe">
+                    Edit Event
+                  </Link>
+                </li>
               </ul>
-            </li>
-
-             
+            </li> */}
 
             {/* Game Dropdown */}
             {/* <li className="nav-item dropdown">
@@ -112,19 +123,20 @@ const Header = () => {
                 <li><Link className="dropdown-item" to="/viewgame">View Match</Link></li>
               </ul>
             </li> */}
-
           </ul>
 
-          {/* Right Side */}
           <div className="d-flex align-items-center gap-2 mt-3 mt-lg-0">
-            <img
-              src={user.imageUr}
-              alt="profile"
+            <div
+              style={{ width: "40px", height: "40px", overflow: "hidden" }}
               className="rounded-circle border"
-              width="40"
-              height="40"
-            />
-
+            >
+              <img
+                src={user.imageUr} // 'imageUr' ke 'imageUrl' kora hoyeche
+                alt="profile"
+                className="w-100 h-100"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
             <button
               className="btn btn-outline-warning btn-sm"
               onClick={handleLogout}

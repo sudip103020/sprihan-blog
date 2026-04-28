@@ -1,7 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
 
 const user = {
-  title: "📝 Sprihan Halder’s All Prizes",
+  title: "🎁 Sprihan Halder’s All Gifts",
   name: "Sprihan Halder",
   DOB: "30-10-2025",
   place: "Dhaka, Bangladesh",
@@ -12,6 +13,7 @@ const user = {
 };
 
 const MemoryAlbum = () => {
+   const [search, setSearch] = useState<string>("");
 
   const prizes = [
     {
@@ -189,7 +191,45 @@ const MemoryAlbum = () => {
       giver: "Grandfather (Paternal)",
       prize: "kasar thala",
     },
+     {
+      date: "24-04-2026 (onnprason event)",
+      giver: "Monisa (Mother's friend)",
+      prize: "1500/- Taka ",
+    },
+    {
+      date: "28-04-2026 (onnprason event)",
+      giver: "Sumaya (Colleague of Father)",
+      prize: "2500/- Taka ",
+    },
+
   ];
+
+  const filteredPrizes = prizes.filter((item) => {
+    const text = search.toLowerCase();
+
+    return (
+      item.date.toLowerCase().includes(text) ||
+      item.giver.toLowerCase().includes(text) ||
+      item.prize.toLowerCase().includes(text)
+    );
+  });
+
+   const highlightText = (text: string) => {
+    if (!search) return text;
+
+    const regex = new RegExp(`(${search})`, "gi");
+    const parts = text.split(regex);
+
+    return parts.map((part, index) =>
+      part.toLowerCase() === search.toLowerCase() ? (
+        <span key={index} style={{ backgroundColor: "yellow", fontWeight: "bold" }}>
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
 
   return (
     <div className="d-flex justify-content-center" style={{ minHeight: "100vh" }}>
@@ -233,31 +273,44 @@ const MemoryAlbum = () => {
           </div>
         </div>
 
+         <input
+          placeholder="Search By Date (DD-MM-YYYY) or Description..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+
         {/* PRIZE TABLE */}
         <div className="card shadow mt-4 rounded-4">
           <div className="card-body">
-            <h5 className="text-center mb-3">🎁 Prize History</h5>
-
+            <h5 className="text-center mb-3">🎁 Gift History</h5>
             <div className="table-responsive">
               <table className="table table-bordered table-striped table-hover text-center align-middle">
                 <thead className="table-dark">
                   <tr>
                     <th>#</th>
-                    <th>Date</th>
+                    <th>Date and Event</th>
                     <th>Who Gave</th>
                     <th>Gift</th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  {prizes.map((item, index) => (
-                    <tr key={index}>
-                      <td>{index + 1}</td>
-                      <td>{item.date}</td>
-                      <td>{item.giver}</td>
-                      <td>{item.prize}</td>
+                  {filteredPrizes.length > 0 ? (
+                    filteredPrizes.map((item, index) => (
+                      <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{highlightText(item.date)}</td>
+                        <td>{highlightText(item.giver)}</td>
+                        <td>{highlightText(item.prize)}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td  className="text-danger">
+                        No results found ❌
+                      </td>
                     </tr>
-                  ))}
+                  )}
                 </tbody>
               </table>
             </div>

@@ -304,5 +304,38 @@ export const people = [
     Description: "বাবাই এর অন্নপ্রাশনের ড্রেস তার ঠাকুমা দিয়েছে আর থালা তার দাদু দিয়েছে ",
    imageId:  ["babay245.jpeg", "babay246.jpeg","babay247.jpeg","babay248.jpeg","babay249.jpeg", ],
   },
+
+   {
+    id: 47,
+    Date_of_memory: "11-04-2026",
+    Description: " বাবার সাথে সেলফি",
+   imageId:  ["babay250.jpeg", "babay251.jpeg", ],
+  },
+  
+   {
+    id: 48,
+    Date_of_memory: "14-04-2026",
+    Description: " স্পৃহাণ বাবাই এর প্রথম নববর্ষ ",
+   imageId:  ["babay252.jpeg", "babay253.jpeg", "babay254.jpeg", "babay255.jpeg", ],
+  },
+   {
+    id: 49,
+    Date_of_memory: "15-04-2026",
+    Description: " স্পৃহাণ বাবাই এর অন্নপ্রাশন উপলক্ষ্যে কার্ড ",
+   imageId:  ["babay256.jpeg",  ],
+  },
+
+  {
+    id: 50,
+    Date_of_memory: "22-04-2026",
+    Description: " স্পৃহাণ বাবাই পরিবারের সাথে রেললাইনে ঘুরতে গিয়েছে ",
+  imageId:  ["babay258.jpeg", "babay259.jpeg","babay261.jpeg","babay262.jpeg", ],
+  },
+ {
+    id: 51,
+    Date_of_memory: "24-04-2026",
+    Description: " স্পৃহাণ বাবাই চুল কাটার পর নতুন লুক",
+  imageId:  ["babay263.jpeg", "babay264.jpeg","babay265.jpeg", ],
+  },
 ];
 

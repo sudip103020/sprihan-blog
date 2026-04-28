@@ -110,4 +110,19 @@ export const people = [
     Description: "বাবাই এর  দাদা ডাক ফুটেছে ",
     imageId:  "vedio16.mp4",
   },
+
+  {
+    id: 16, 
+    Date_of_memory: "17 April 2026",
+    Description: " বাবাই হামাগুড়ি দিয়া শিখছে",
+    imageId:  "vedio17.mp4",
+  },
+
+  {
+    id: 17, 
+    Date_of_memory: "19 April 2026",
+    Description: "বাবাই  কম্পিউটার এর  চালানো শিখছে ",
+    imageId:  "vedio18.mp4",
+  },
+  
 ];
