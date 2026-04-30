@@ -311,7 +311,7 @@ const MemoryAlbum = () => {
         {/* PRIZE TABLE */}
         <div className="card shadow mt-4 rounded-4">
           <div className="card-body">
-            <h5 className="text-center mb-3">🎁 Gift History</h5>
+            <h5 className="text-center mb-3"> Gift's History</h5>
             <div className="table-responsive">
               <table className="table table-bordered table-striped table-hover text-center align-middle">
                 <thead className="table-dark">

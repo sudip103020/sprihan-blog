@@ -1,5 +1,5 @@
 
-import { FaAddressBook, FaFacebook, FaGithub, FaYoutube } from "react-icons/fa";
+import { FaAddressBook, FaFacebook, FaGithub } from "react-icons/fa";
 import { Fa42Group } from "react-icons/fa6";
 
 const Footer = () => {
