@@ -1,5 +1,6 @@
 
-import { FaFacebook, FaGithub, FaYoutube } from "react-icons/fa";
+import { FaAddressBook, FaFacebook, FaGithub, FaYoutube } from "react-icons/fa";
+import { Fa42Group } from "react-icons/fa6";
 
 const Footer = () => {
     return (
@@ -26,11 +27,14 @@ const Footer = () => {
                         <a href="https://www.facebook.com/share/14ecEanpppd/" target="_blank" className="text-secondary social-icon fb" >
                             <FaFacebook size={24} />
                         </a>
-                        <a href="https://youtube.com" target="_blank" className="text-secondary social-icon yt">
-                            <FaYoutube size={24} />
+                        <a href="https://vercel.com/sudip103020s-projects" target="_blank" className="text-secondary social-icon yt">
+                            <FaAddressBook size={24} />
                         </a>
                         <a href="https://github.com/sudip103020/sprihan-blog" target="_blank" className="text-secondary social-icon gh ">
                             <FaGithub size={24} />
+                        </a>
+                        <a href="https://sprihan-blog-new.vercel.app" target="_blank" className="text-secondary social-icon gh ">
+                            <Fa42Group size={24} />
                         </a>
 
                     </div>

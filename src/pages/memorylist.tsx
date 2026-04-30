@@ -337,5 +337,18 @@ export const people = [
     Description: " স্পৃহাণ বাবাই চুল কাটার পর নতুন লুক",
   imageId:  ["babay263.jpeg", "babay264.jpeg","babay265.jpeg", ],
   },
+
+  {
+    id: 52,
+    Date_of_memory: "29-04-2026",
+    Description: " বাবাই এর আজ অন্নপ্রাশন ",
+  imageId:  ["babay266.jpg", "babay267.jpg","babay268.jpg", "babay269.jpg", "babay270.jpg","babay271.jpg","babay272.jpg",],
+  },
+  {
+    id: 53,
+    Date_of_memory: "29-04-2026",
+    Description: " বাবাই এর আজ অন্নপ্রাশন (part 2) ",
+  imageId:  ["babay273.jpg","babay274.jpg","babay275.jpg","babay276.jpg","babay277.jpg","babay278.jpg",],
+  },
 ];
 

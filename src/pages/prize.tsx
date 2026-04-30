@@ -201,6 +201,35 @@ const MemoryAlbum = () => {
       giver: "Sumaya (Colleague of Father)",
       prize: "2500/- Taka ",
     },
+    {
+      date: "29-04-2026 (onnprason event)",
+      giver: "Grandmother  (Maternal)",
+      prize: "50000/- Tk, Locket(gold) & Cloth 1 Set ",
+    },
+    {
+      date: "29-04-2026 (onnprason event)",
+      giver: "Antu (Father's Brother)",
+      prize: "Plate,  Cloth 1 Set(arong) ",
+    },
+
+    {
+      date: "29-04-2026 (onnprason event)",
+      giver: "Sathi (Father's Sister)",
+      prize: "Glass & Plate",
+    },
+
+    {
+      date: "29-04-2026 (onnprason event)",
+      giver: "Cironjit (Mother's friend)",
+      prize: "Cloth 1 Set(arong)",
+    },
+
+    {
+      date: "29-04-2026 (onnprason event)",
+      giver: "Sandeep (Mother's friend)",
+      prize: "Cloth 1 Set(arong)",
+    },
+
 
   ];
 
