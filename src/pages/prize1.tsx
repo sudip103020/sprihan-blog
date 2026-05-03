@@ -2,12 +2,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 
 const user = {
-  title: "🎁 Sprihan Halder’s General Gifts",
+  title: "🎁 Sprihan Halder’s Onnoprason Gifts",
   name: "Sprihan Halder",
   DOB: "30-10-2025",
   place: "Dhaka, Bangladesh",
   Email: "sprihanhalder@gmail.com",
-
   imageUr2: "/babay247.jpeg",
   imageSize: 100,
   imageSize1: 100,
@@ -18,166 +17,109 @@ const MemoryAlbum = () => {
 
   const prizes = [
     {
-      date: "03-11-2025",
+      date: "03-04-2026 (onnprason event)",
       giver: "Grandmother (Paternal)",
-      prize: "Silver Bicha",
+      prize: "Bridegroom Suit",
     },
 
     {
-      date: "03-11-2025",
-      giver: "Nur(Friends of Mother)",
-      prize: "cloths 1 sets",
+      date: "03-04-2026 (onnprason event)",
+      giver: "Grandfather (Paternal)",
+      prize: "kasar thala",
+    },
+    {
+      date: "24-04-2026 (onnprason event)",
+      giver: "Monisa (Mother's friend)",
+      prize: "1500/- Taka ",
+    },
+    {
+      date: "28-04-2026 (onnprason event)",
+      giver: "Sumaya (Colleague of Father)",
+      prize: "2500/- Taka ",
+    },
+    {
+      date: "29-04-2026 (onnprason event)",
+      giver: "Grandmother  (Maternal)",
+      prize: "50000/- Taka",
     },
 
     {
-      date: "03-11-2025",
-      giver: "takuma (Mother)",
-      prize: "Towel Set",
+      date: "29-04-2026 (onnprason event)",
+      giver: "Grandmother  (Maternal)",
+      prize: "Locket(gold) & Cloth 1 Set ",
+    },
+    {
+      date: "29-04-2026 (onnprason event)",
+      giver: "Antu (Father's Brother)",
+      prize: "Plate,  Cloth 1 Set(arong) ",
     },
 
     {
-      date: "03-11-2025",
-      giver: "Grandparents (Paternal)",
-      prize: "Silver kharu",
+      date: "29-04-2026 (onnprason event)",
+      giver: "Sathi (Father's Sister)",
+      prize: "Glass & Plate",
     },
 
     {
-      date: "03-11-2025",
-      giver: "Mother",
-      prize: "Silver Chain",
+      date: "29-04-2026 (onnprason event)",
+      giver: "Cironjit (Mother's friend)",
+      prize: "Cloth 1 Set(arong)",
     },
 
     {
-      date: "04-11-2025",
-      giver: "Relatives (Basa)",
-      prize: "cloths 5 sets",
+      date: "29-04-2026 (onnprason event)",
+      giver: "Sandeep (Mother's friend)",
+      prize: "Cloth 1 Set(arong)",
     },
 
     {
-      date: "25-11-2025",
-      giver: "Titu (Garrrezala friend of Father)",
-      prize: "500/- Taka",
+      date: "29-04-2026 (onnprason event)",
+      giver: "Cotomasi (Paternal)",
+      prize: "Silver Baselet",
     },
 
     {
-      date: "13-12-2025",
-      giver: "Grandfather (maternal)",
-      prize: "Golden ring",
-    },
-
-    {
-      date: "25-12-2025",
-      giver: "Ayesa (Colleague of Mother)",
-      prize: "1000/- Taka",
-    },
-
-    {
-      date: "25-12-2025",
-      giver: "Jahangir (Colleague of Mother)",
-      prize: "1000/- Taka",
-    },
-    {
-      date: "25-12-2025",
-      giver: "Nurujaman (Colleague of Mother)",
-      prize: "cloths 2 sets",
-    },
-
-    {
-      date: "25-12-2025",
-      giver: "Mijan(Colleague of Mother)",
+      date: "01-05-2026 (onnprason event)",
+      giver: "Rubayet (Colleague of Father)",
       prize: "3000/- Taka",
     },
 
     {
-      date: "25-12-2025",
-      giver: "Rubayet (Colleague of Father)",
-      prize: "cloths 1 sets & Combol",
+      date: "01-05-2026 (onnprason event)",
+      giver: "Jannatul (Mother's friend)",
+      prize: "Silver chain with locket",
     },
 
     {
-      date: "25-12-2025",
-      giver: "Sumaya (Colleague of Father)",
-      prize: "cloths 1 sets",
+      date: "01-05-2026 (onnprason event)",
+      giver: "Ibrahim (GrandFather's friend)",
+      prize: "Silver chain ",
+    },
+    {
+      date: "01-05-2026 (onnprason event)",
+      giver: "Basar 9th floor anty ",
+      prize: "1000/- Taka",
+    },
+    {
+      date: "01-05-2026 (onnprason event)",
+      giver: "Colleague of Mothers (Name Unknown) ",
+      prize: "4000/- Taka",
     },
 
     {
-      date: "15-12-2025",
-      giver: "Manisa & Ritu (Friends of Mother)",
-      prize: "Baby Carrier Bag",
-    },
-
-    {
-      date: "15-12-2025",
-      giver: "Sandeep (Friends of Mother)",
-      prize: "cloths 2 sets",
-    },
-
-    {
-      date: "25-11-2025",
-      giver: "Anupom (Friend of Father)",
-      prize: "2000/- Taka",
+      date: "01-05-2026 (onnprason event)",
+      giver: "Nur (Mother's friend)",
+      prize: "200/- Taka",
     },
     {
-      date: "26-02-2026",
-      giver: "Toukir (Friend of Father)",
-      prize: "2000 Taka",
-    },
-
-    {
-      date: "17-03-2026",
-      giver: "Ibrahim (Friend of Father's Father)",
-      prize: "cloths 1 sets",
-    },
-
-    {
-      date: "19-03-2026",
-      giver: "komolesh(father's Uncle Bari)",
-      prize: "genji suit",
-    },
-
-    {
-      date: "19-03-2026",
-      giver: "Tusar(father's Uncle Bari)",
-      prize: "genji suit",
+      date: "01-05-2026 (onnprason event)",
+      giver: "Chanan Halder (Father's Brother)",
+      prize: "Flux 1 Set",
     },
     {
-      date: "19-03-2026",
-      giver: "Paish(father's Brother Bari)",
-      prize: "genji suit & Bottle",
-    },
-
-    {
-      date: "19-03-2026",
-      giver: "Sohag(father's Brother Bari)",
-      prize: "genji suit",
-    },
-
-    {
-      date: "19-03-2026",
-      giver: "Aroup(father's Brother Bari)",
-      prize: "100/- Taka",
-    },
-
-    {
-      date: "22-03-2026",
-      giver: "Noni Gopal (father's Brother Relative)",
-      prize: "genji suit",
-    },
-    {
-      date: "22-03-2026",
-      giver: "Nikil (father's Uncle Bari)",
-      prize: "Thalabason",
-    },
-    {
-      date: "22-03-2026",
-      giver: "Ajrin (Mother's relative)",
-      prize: "500/- Taka",
-    },
-
-    {
-      date: "22-03-2026",
-      giver: "Grandmother (Maternal)",
-      prize: "cloths 4 sets",
+      date: "01-05-2026 (onnprason event)",
+      giver: "Bikas Das (GrandFather's friend)",
+      prize: "1000/- Taka",
     },
   ];
 

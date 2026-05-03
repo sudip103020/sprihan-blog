@@ -67,16 +67,36 @@ const Header = () => {
               </Link>
             </li>
 
-            <li className="nav-item">
-              <Link className="nav-link fw-semibold" to="/prize">
-                Gifts
-              </Link>
+
+
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle fw-semibold"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+               Gifts
+              </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link className="dropdown-item" to="/prize">
+                    General Gift
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/prize1">
+                    Onnoprason Gift
+                  </Link>
+                </li>
+              </ul>
             </li>
 
             <li className="nav-item">
               <Link className="nav-link fw-semibold" to="/contact">
                 Contact
               </Link>
+              
             </li>
 
             {/* Event Dropdown */}

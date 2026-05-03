@@ -13,6 +13,7 @@ import MemoryAlbum from "./MemoryAlbum";
 import Prescription from "./Prescription";
 import Video from "./Video";
 import Prize from "./prize";
+import Prize1 from "./prize1";
 
 
 export default function MainRoute() {
@@ -114,6 +115,15 @@ export default function MainRoute() {
         element={
           <ProtectedRoute>
             <Prize />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/prize1"
+        element={
+          <ProtectedRoute>
+            <Prize1 />
           </ProtectedRoute>
         }
       />
