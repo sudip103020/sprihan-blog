@@ -41,5 +41,7 @@
   color: #888;
 }
 
-
+.person-info {
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+}
 

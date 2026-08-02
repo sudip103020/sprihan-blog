@@ -18,11 +18,13 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   return (
     <>
       <Header />
-      <Footer />
+     
 
       <main className="d-flex justify-content-center align-items-center w-100 my-5 pt-5">
         {children} {/* About page will fill this */}
       </main>
+
+       <Footer />
     </>
   );
 };

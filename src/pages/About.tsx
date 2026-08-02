@@ -4,10 +4,6 @@ import { getImageUrl } from "./imagelist";
 
 const user = {
   title: "👨‍👩‍👧‍👦 Welcome to Sprihan Halder’s Family ",
-  name: "Sprihan Halder",
-  DOB: "30-10-2025",
-  Email: "sprihanhalder@gmail.com",
-  place: "Dhaka, Bangladesh",
   imageUr2: "/babay275.jpg",
   imageSize: 230,
   imageSize1: 230,
@@ -31,17 +27,17 @@ const About = () => {
         />
 
         <div>
-          <h5 className="text-danger-emphasis mb-1">
+          <h5 className="text-danger-emphasis mb-1 person-info">
             Relation: {person.Relation}
           </h5>
-          <p className="mb-0 text-warning-emphasis">
+          <p className="mb-0 text-warning-emphasis person-info">
             Name: {person.name}
           </p>
-          <small className="text-info-emphasis">
+          <small className="text-info-emphasis person-info">
             DOB: {person.Date_of_birth}
           </small>
           <br />
-          <small className="text-secondary-emphasis">
+          <small className="text-secondary-emphasis person-info">
             Profession: {person.profession}
           </small>
         </div>
@@ -69,14 +65,7 @@ const About = () => {
           />
 
               <h5 className="text-danger-emphasis">{user.title}</h5>
-                <p className="text-warning-emphasis mb-1">Name: {user.name}</p>
-                <small className="text-info-emphasis d-block">
-                  DOB: {user.DOB}
-                </small>
-                <small className="text-info-emphasis d-block">
-                  Email: {user.Email}
-                </small>
-                <small className="text-secondary-emphasis">Birth Place: {user.place}</small>
+              
 
         </div>
       </div>

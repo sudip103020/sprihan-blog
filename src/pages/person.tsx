@@ -5,7 +5,7 @@ export const people = [
     name: "Sudip Kumar Halder",
     Date_of_birth: "18-02-1993",
     profession: "Govt Employee",
-    imageId: "baba.jpeg",
+    imageId: "babay314.jpg",
   },
   {
     id: 1,
@@ -13,7 +13,7 @@ export const people = [
     name: "Puja Dey",
     Date_of_birth: "07-12-1999",
     profession: "Banker",
-    imageId: "ma.jpeg",
+    imageId: "babay315.jpg",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const people = [
     name: "Tara Rani ",
     Date_of_birth: "07-12-1974",
     profession: "Housewife",
-     imageId: "dadi.jpeg",
+     imageId: "babay232.jpeg",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const people = [
     name: "Sudangsu Kumar Halder",
     Date_of_birth: "01-12-1970",
     profession: "Farmer",
-       imageId: "dada.jpeg",
+       imageId: "babay233.jpeg",
   },
   {
     id: 4,

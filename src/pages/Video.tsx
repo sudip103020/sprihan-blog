@@ -21,9 +21,9 @@ export default function Video() {
 
               {/* Caption */}
               <div className="p-3 text-center">
-                <h6 className="fw-bold mb-1">👶 {person.Description}</h6>
+                <h6 className="fw-bold mb-1 person-info">👶 {person.Description}</h6>
 
-                <small className="text-muted">📅 {person.Date_of_memory}</small>
+                <small className="text-muted person-info">📅 {person.Date_of_memory}</small>
               </div>
             </div>
           </div>

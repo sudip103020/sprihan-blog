@@ -124,5 +124,68 @@ export const people = [
     Description: "বাবাই  কম্পিউটার এর  চালানো শিখছে ",
     imageId:  "vedio18.mp4",
   },
+
+  {
+    id: 18, 
+    Date_of_memory: "30 April 2026",
+    Description: "বাবাই  এর অন্নপ্রাশনের ভিডিও ",
+    imageId:  "vedio19.mp4",
+  },
+
+  {
+    id: 19, 
+    Date_of_memory: "02 May 2026",
+    Description: "বাবাই  হামাগুড়ি শিখছে ",
+    imageId:  "vedio20.mp4",
+  },
+
+   {
+    id: 20, 
+    Date_of_memory: "10 May 2026",
+    Description: "বাবাই  খাওয়া  শিখছে ",
+    imageId:  "vedio21.mp4",
+  },
+
+  {
+    id: 21, 
+    Date_of_memory: "26 May 2026",
+    Description: "বাবাই  তার বড় বোনের সাথে খেলা করছে",
+    imageId:  "vedio22.mp4",
+  },
+
+  {
+    id: 22, 
+    Date_of_memory: "28 May 2026",
+    Description: "বাবাই  এখন সলীড খাওয়া শিখে গেছে ",
+    imageId:  "vedio23.mp4",
+  },
+
+  {
+    id: 23, 
+    Date_of_memory: "18 july 2026",
+    Description: "বাবাই  তালি দেওয়া শিখে গেছে  ",
+    imageId:  "vedio27.mp4",
+  },
+
+  {
+    id: 24, 
+    Date_of_memory: "24 july 2026",
+    Description: "বাবাই মোবাইল টেপে  ",
+    imageId:  "vedio26.mp4",
+  },
+
+  {
+    id: 25, 
+    Date_of_memory: "27 july 2026",
+    Description: "বাবাই আয়না দেখে আদর করছে  ",
+    imageId:  "vedio25.mp4",
+  },
+
+  {
+    id: 26, 
+    Date_of_memory: "31 july 2026",
+    Description: "বাবাই  এখন পিঠা খাচ্ছে ",
+    imageId:  "vedio24.mp4",
+  },
   
 ];

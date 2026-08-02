@@ -1,4 +1,12 @@
-import { Link } from "react-router-dom";
+import {
+  Navbar,
+  Nav,
+  Container,
+  NavDropdown,
+  Button,
+  Image,
+} from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const handleLogout = () => {
@@ -7,166 +15,96 @@ const Header = () => {
   };
 
   const user = {
-    imageUr: "/babay1.jpeg",
+    imageUrl: "/babay1.png",
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
-      <div className="container-fluid px-3">
+   <Navbar
+  expand="lg"
+  sticky="top"
+  className="shadow"
+  style={{
+    background: "rgba(187, 211, 200, 0.67)",
+    backdropFilter: "blur(12px)",
+  }}
+>
+      <Container>
         {/* Logo */}
-        <Link className="navbar-brand fw-bold" to="/">
-          ✍️ SprihanBlog
-        </Link>
-
-        {/* Mobile toggle */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#blogNavbar"
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          className="fw-bold fs-4 d-flex align-items-center"
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+          SprihanBlog
+        </Navbar.Brand>
 
-        {/* Menu */}
-        <div className="collapse navbar-collapse" id="blogNavbar">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link className="nav-link fw-semibold" to="/about">
-                About
-              </Link>
-            </li>
+        {/* Mobile Button */}
+        <Navbar.Toggle aria-controls="main-navbar" />
 
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle fw-semibold"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
-                Memory
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link className="dropdown-item" to="/memoryalbum">
-                    First Year(2025-26)
-                  </Link>
-                </li>
-              </ul>
-            </li>
+        <Navbar.Collapse id="main-navbar">
+          {/* Left Menu */}
+          <Nav className="mx-auto text-center">
+            <Nav.Link as={NavLink} to="/about" className="fw-semibold px-3">
+              About
+            </Nav.Link>
 
-            <li className="nav-item">
-              <Link className="nav-link fw-semibold" to="/video">
-                Video
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link className="nav-link fw-semibold" to="/prescription">
-                Prescription
-              </Link>
-            </li>
-
-
-
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle fw-semibold"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
-               Gifts
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link className="dropdown-item" to="/prize">
-                    General Gift
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/prize1">
-                    Onnoprason Gift
-                  </Link>
-                </li>
-              </ul>
-            </li>
-
-            <li className="nav-item">
-              <Link className="nav-link fw-semibold" to="/contact">
-                Contact
-              </Link>
-              
-            </li>
-
-            {/* Event Dropdown */}
-            {/* <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle fw-semibold"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
-                Event
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link className="dropdown-item" to="/post">
-                    Add Event
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/view">
-                    View Event
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/tictoe">
-                    Edit Event
-                  </Link>
-                </li>
-              </ul>
-            </li> */}
-
-            {/* Game Dropdown */}
-            {/* <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle fw-semibold"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
-                Game
-              </a>
-              <ul className="dropdown-menu">
-                <li><Link className="dropdown-item" to="/addgame">Add Game</Link></li>
-                <li><Link className="dropdown-item" to="/viewgame">View Match</Link></li>
-              </ul>
-            </li> */}
-          </ul>
-
-          <div className="d-flex align-items-center gap-2 mt-3 mt-lg-0">
-            <div
-              style={{ width: "40px", height: "40px", overflow: "hidden" }}
-              className="rounded-circle border"
+            <NavDropdown
+              title="Memory"
+              id="memory-dropdown"
+              className="fw-semibold"
             >
-              <img
-                src={user.imageUr} // 'imageUr' ke 'imageUrl' kora hoyeche
-                alt="profile"
-                className="w-100 h-100"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <button
-              className="btn btn-outline-warning btn-sm"
-              onClick={handleLogout}
+              <NavDropdown.Item as={NavLink} to="/memoryalbum">
+                First Year (2025-26)
+              </NavDropdown.Item>
+            </NavDropdown>
+
+            <Nav.Link as={NavLink} to="/video" className="fw-semibold px-3">
+              Video
+            </Nav.Link>
+
+            <Nav.Link
+              as={NavLink}
+              to="/prescription"
+              className="fw-semibold px-3"
             >
+              Prescription
+            </Nav.Link>
+
+            <NavDropdown title="Gifts" id="gift-dropdown">
+              <NavDropdown.Item as={NavLink} to="/prize">
+                General Gift
+              </NavDropdown.Item>
+
+              <NavDropdown.Item as={NavLink} to="/prize1">
+                Onnoprason Gift
+              </NavDropdown.Item>
+            </NavDropdown>
+
+            <Nav.Link as={NavLink} to="/contact" className="fw-semibold px-3">
+              Contact
+            </Nav.Link>
+          </Nav>
+
+          {/* Right Side */}
+          <div className="d-flex flex-column flex-lg-row align-items-center gap-3 mt-3 mt-lg-0">
+            <Image
+              src={user.imageUrl}
+              roundedCircle
+              width={45}
+              height={45}
+              style={{
+                objectFit: "cover",
+                border: "2px solid #198754",
+              }}
+            />
+
+            <Button variant="success" onClick={handleLogout}>
               Logout
-            </button>
+            </Button>
           </div>
-        </div>
-      </div>
-    </nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 

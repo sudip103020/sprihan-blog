@@ -11,10 +11,7 @@ interface Person {
 
 const user = {
   title: "🎉 Sprihan Halder’s All Memories",
-  name: "Sprihan Halder",
-  DOB: "30-10-2025",
-  place: "Dhaka, Bangladesh",
-  Email: "sprihanhalder@gmail.com",
+ 
   imageUr2: "/babay276.jpg",
   imageSize: 100,
   imageSize1: 100,
@@ -74,11 +71,11 @@ const MemoryAlbum = () => {
         <div>
           {/* DATE & DESCRIPTION */}
           <div className="card shadow-sm p-3 rounded-4 bg-primary-subtle">
-            <h6 className="text-danger-emphasis text-center">
+            <h6 className="text-danger-emphasis text-center person-info">
               {highlightText(person.Date_of_memory)}
             </h6>
 
-            <p className="text-warning-emphasis">
+            <p className="text-warning-emphasis person-info">
               {highlightText(person.Description)}
             </p>
           </div>
@@ -137,14 +134,7 @@ const MemoryAlbum = () => {
             <div className="d-flex align-items-center">
               <div>
                 <h5 className="text-danger-emphasis">{user.title}</h5>
-                <p className="text-warning-emphasis mb-1">Name: {user.name}</p>
-                <small className="text-info-emphasis d-block">
-                  DOB: {user.DOB}
-                </small>
-                <small className="text-info-emphasis d-block">
-                  Email: {user.Email}
-                </small>
-                <small className="text-secondary-emphasis">Birth Place: {user.place}</small>
+                
               </div>
               <img
                 className="rounded-circle border ms-auto"
@@ -181,43 +171,75 @@ const MemoryAlbum = () => {
       </div>
 
       {/* 🔍 MODAL */}
-      {showModal && (
-        <div className="modal fade show d-block" tabIndex={-1}>
-          <div
-            className={`modal-dialog modal-dialog-centered ${window.innerWidth < 500 ? "" : "modal-lg"}`}
-          >
-            <div className="modal-content rounded-4">
-              <div className="modal-header">
-                <h5 className="modal-title">📸 Memory Album</h5>
-                <button
-                  className="btn-close"
-                  onClick={() => setShowModal(false)}
-                />
-              </div>
+     {showModal && (
+  <div
+    className="modal fade show d-block"
+    tabIndex={-1}
+    style={{ backgroundColor: "rgba(0,0,0,0.9)" }}
+  >
+    <div
+      className={`modal-dialog modal-dialog-centered ${
+        window.innerWidth < 576 ? "modal-fullscreen" : "modal-xl"
+      }`}
+    >
+      <div className="modal-content bg-dark border-0">
 
-              <div className="modal-body text-center">
-                <img
-                  src={activeImages[activeIndex]}
-                  alt="active memory"
-                  className="img-fluid rounded-3"
-                  style={{
-                    maxHeight: "70vh",
-                    objectFit: "contain",
-                  }}
-                />
-                <div className="d-flex justify-content-between mt-3">
-                  <button className="btn btn-primary" onClick={prevImage}>
-                    Prev
-                  </button>
-                  <button className="btn btn-primary" onClick={nextImage}>
-                    Next
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Header */}
+        <div className="modal-header border-0">
+          <h5 className="modal-title text-white">
+            📸 Memory Album
+          </h5>
+
+          <button
+            type="button"
+            className="btn-close btn-close-white"
+            onClick={() => setShowModal(false)}
+          />
         </div>
-      )}
+
+        {/* Body */}
+        <div className="modal-body p-1 d-flex justify-content-center align-items-center">
+
+          <img
+            src={activeImages[activeIndex]}
+            alt="Memory"
+            className="img-fluid rounded"
+            style={{
+              width: "100%",
+              height: window.innerWidth < 576 ? "82vh" : "78vh",
+              objectFit: "contain",
+            }}
+          />
+
+        </div>
+
+        {/* Footer */}
+        <div className="modal-footer border-0 justify-content-between">
+
+          <button
+            className="btn btn-success px-4"
+            onClick={prevImage}
+          >
+            ◀ Prev
+          </button>
+
+          <span className="text-white fw-semibold">
+            {activeIndex + 1} / {activeImages.length}
+          </span>
+
+          <button
+            className="btn btn-success px-4"
+            onClick={nextImage}
+          >
+            Next ▶
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 };

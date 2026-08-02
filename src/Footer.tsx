@@ -1,53 +1,131 @@
+import { Container, Row, Col } from "react-bootstrap";
+import {
+  FaFacebookF,
+  FaGithub,
+  FaEnvelope,
+  FaGlobe,
+  FaUser,
+  FaBirthdayCake,
 
-import { FaAddressBook, FaFacebook, FaGithub } from "react-icons/fa";
-import { Fa42Group } from "react-icons/fa6";
+} from "react-icons/fa";
 
 const Footer = () => {
-    return (
-        <footer className="bg-dark text-light mt-1 pt-0 admin-footer">
-            {/* width control */}
-            <div className="container">
+  return (
+    <footer className="bg-dark text-light pt-5 pb-3 mt-5">
+      <Container>
+        <Row className="gy-4">
 
+          {/* About */}
+          <Col lg={4} md={6}>
+            <h5 className="fw-bold mb-3">✍️ SprihanBlog</h5>
 
-                {/* About */}
-                {/* <div className="col-md-4 mb-4">
-            <p className="text-secondary small">
-              A personal blog about web development, technology and thoughts.
+            <p className="text-secondary">
+              A personal blog where memories, technology, projects,
+              and experiences are shared beautifully.
             </p>
-          </div> */}
+          </Col>
 
-                {/* Categories */}
-                <hr className="border-secondary" />
-                <div className="d-flex flex-column flex-md-row justify-content-between align-items-center pb-3">
-                    <span className="text-secondary small">
-                        © {new Date().getFullYear()} SprihanBlog. All rights reserved.
-                    </span>
+          {/* Quick Links */}
+          <Col lg={3} md={6}>
+            <h5 className="fw-bold mb-3">Quick Links</h5>
 
-                    <div className="d-flex gap-3 mt-2 mt-md-0">
-                        <a href="https://www.facebook.com/share/14ecEanpppd/" target="_blank" className="text-secondary social-icon fb" >
-                            <FaFacebook size={24} />
-                        </a>
-                        <a href="https://vercel.com/sudip103020s-projects" target="_blank" className="text-secondary social-icon yt">
-                            <FaAddressBook size={24} />
-                        </a>
-                        <a href="https://github.com/sudip103020/sprihan-blog" target="_blank" className="text-secondary social-icon gh ">
-                            <FaGithub size={24} />
-                        </a>
-                        <a href="https://sprihan-blog-new.vercel.app" target="_blank" className="text-secondary social-icon gh ">
-                            <Fa42Group size={24} />
-                        </a>
+            <ul className="list-unstyled">
 
-                    </div>
-                </div>
+              <li className="mb-2">
+                <a href="/" className="footer-link">
+                  Home
+                </a>
+              </li>
+
+              <li className="mb-2">
+                <a href="/about" className="footer-link">
+                  About
+                </a>
+              </li>
+
+              <li className="mb-2">
+                <a href="/memoryalbum" className="footer-link">
+                  Memory Album
+                </a>
+              </li>
+
+              <li className="mb-2">
+                <a href="/contact" className="footer-link">
+                  Contact
+                </a>
+              </li>
+
+            </ul>
+          </Col>
+
+          {/* Contact */}
+          <Col lg={3} md={6}>
+            <h5 className="fw-bold mb-3">Contact</h5>
+
+            <p>
+              <FaUser className="me-2 text-success" />
+              Sprihan Halder
+            </p>
+
+            <p>
+              <FaBirthdayCake className="me-2 text-success" />
+              30 October 2025
+            </p>
+
+            <p>
+              <FaEnvelope className="me-2 text-success" />
+              sprihanhalder@gmail.com
+            </p>
+          </Col>
+
+          {/* Follow */}
+          <Col lg={2} md={6}>
+            <h5 className="fw-bold mb-3">Follow Us</h5>
+
+            <div className="d-flex gap-3">
+
+              <a
+                href="https://www.facebook.com/share/14ecEanpppd/"
+                target="_blank"
+                rel="noreferrer"
+                className="social-icon"
+              >
+                <FaFacebookF />
+              </a>
+
+              <a
+                href="https://github.com/sudip103020/sprihan-blog"
+                target="_blank"
+                rel="noreferrer"
+                className="social-icon"
+              >
+                <FaGithub />
+              </a>
+
+              <a
+                href="https://sprihan-blog-new.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                className="social-icon"
+              >
+                <FaGlobe />
+              </a>
 
             </div>
+          </Col>
 
+        </Row>
 
+        <hr className="border-secondary my-4" />
 
-            {/* Bottom Bar */}
+        <div className="text-center text-secondary">
+          © {new Date().getFullYear()} <strong>SprihanBlog</strong>. All Rights
+          Reserved.
+        </div>
 
-        </footer>
-    );
+      </Container>
+    </footer>
+  );
 };
 
 export default Footer;

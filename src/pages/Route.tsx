@@ -14,6 +14,7 @@ import Prescription from "./Prescription";
 import Video from "./Video";
 import Prize from "./prize";
 import Prize1 from "./prize1";
+import Footer from "../Footer";
 
 
 export default function MainRoute() {
@@ -134,6 +135,16 @@ export default function MainRoute() {
         element={
           <ProtectedRoute>
             <Header />
+          </ProtectedRoute>
+        }
+      />
+
+
+      <Route
+        path="/Footer"
+        element={
+          <ProtectedRoute>
+            <Footer />
           </ProtectedRoute>
         }
       />
